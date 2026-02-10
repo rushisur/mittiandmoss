@@ -1,8 +1,10 @@
-local_backend: true
+# local_backend: true
 backend:
   name: github
   repo: rushisur/mittiandmoss
   branch: main
+  base_url: https://mittiandmoss.pages.dev
+  auth_endpoint: oauth/authorize
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
