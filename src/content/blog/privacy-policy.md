@@ -1,13 +1,13 @@
 ---
 title: "Privacy Policy"
-description: "## Privacy Policy for Mitti and Moss  **Last Updated: October 28, 2025**  Mitti and Moss (\"us\", \"we\", or \"our\") operates the [https://www.mittiandmoss..."
+description: "Privacy Policy for Mitti and Moss Last Updated: October 28, 2025 Mitti and Moss (\"us\", \"we\", or \"our\") operates the https://www.mittiandmoss.com website (t..."
 date: 2025-10-28T04:53:00.000Z
 image: ""
 active: true
 tags: ["interior", "decor"]
 ---
 
-## Privacy Policy for Mitti and Moss
+# Privacy Policy for Mitti and Moss
 
 **Last Updated: October 28, 2025**
 
@@ -29,13 +29,13 @@ We collect several different types of information for various purposes to provid
 
 Mitti and Moss uses the collected data for purposes such as:
 
-- To provide and maintain the Service
-    
-- To monitor the usage of the Service
-    
-- To detect, prevent and address technical issues
-    
-- *(If using Google AdSense):* To serve personalized advertisements based on user interests (via Google AdSense cookies).
+    - To provide and maintain the Service
+
+    - To monitor the usage of the Service
+
+    - To detect, prevent and address technical issues
+
+    - *(If using Google AdSense):* To serve personalized advertisements based on user interests (via Google AdSense cookies).
 
 ## Google AdSense & DoubleClick DART Cookie
 
@@ -57,4 +57,4 @@ We may update our Privacy Policy from time to time. We will notify you of any ch
 
 If you have any questions about this Privacy Policy, please contact us:
 
-- By email: **hello@mittiandmoss.com**
+    - By email: **hello@mittiandmoss.com**

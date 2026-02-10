@@ -1,13 +1,13 @@
 ---
 title: "Affiliate Disclaimer"
-description: "## Affiliate Disclaimer  Please assume that some of the links on Mitti and Moss (https://www.mittiandmoss.com) are affiliate links. This means that if..."
+description: "Affiliate Disclaimer Please assume that some of the links on Mitti and Moss (https://www.mittiandmoss.com) are affiliate links. This means that if you clic..."
 date: 2025-10-28T04:56:00.000Z
 image: ""
 active: true
 tags: ["interior", "decor"]
 ---
 
-## Affiliate Disclaimer
+# Affiliate Disclaimer
 
 Please assume that some of the links on Mitti and Moss (https://www.mittiandmoss.com) are affiliate links. This means that if you click on one of these links and make a purchase, we may receive a small commission at **no extra cost to you**.
 

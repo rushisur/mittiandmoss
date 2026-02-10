@@ -1,21 +1,144 @@
 import fs from 'fs';
 import path from 'path';
 
-// Helper to extract content between tags
-function extractTag(content, tag) {
-    const regex = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, 'i');
-    const match = content.match(regex);
-    return match ? match[1].trim() : '';
+// ──────────────────────────────────────────────────────────
+//  Mitti & Moss — Blogger Atom → Astro Markdown Migrator
+// ──────────────────────────────────────────────────────────
+
+function extractTag(xml, tag) {
+    const re = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, 'i');
+    const m = xml.match(re);
+    return m ? m[1].trim() : '';
 }
 
-// Helper to unescape HTML entities
 function unescapeHtml(str) {
     return str
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
         .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
         .replace(/&apos;/g, "'")
         .replace(/&amp;/g, '&');
+}
+
+function stripAllTags(html) {
+    return html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function htmlToMarkdown(html) {
+    let md = html;
+
+    // ── 0. Remove Angular / Blogger junk ──
+    md = md.replace(/<source-footnote[\s\S]*?<\/source-footnote>/gi, '');
+    md = md.replace(/<sources-carousel-inline[\s\S]*?<\/sources-carousel-inline>/gi, '');
+    md = md.replace(/<source-inline-chip[s]?[\s\S]*?<\/source-inline-chip[s]?>/gi, '');
+    md = md.replace(/<button[\s\S]*?<\/button>/gi, '');
+    md = md.replace(/<mat-icon[\s\S]*?<\/mat-icon>/gi, '');
+    md = md.replace(/<sup[\s\S]*?<\/sup>/gi, '');
+    md = md.replace(/<!--[\s\S]*?-->/g, '');
+
+    // ── 1. Strip citation/junk spans ──
+    md = md.replace(/<span[^>]*class="[^"]*citation[^"]*"[^>]*>([\s\S]*?)<\/span>/gi, '$1');
+    md = md.replace(/<span[^>]*>([\s\S]*?)<\/span>/gi, '$1');
+
+    // ── 2. Fix <code>[Product Link: <a href="url">Text</a>]</code> → keep inner <a> ──
+    // The original HTML has: <code>[Product Link: <a href="...">Text</a>]</code>
+    // We want to strip the <code> wrapper and [Product Link: ] text, keeping just the <a>
+    md = md.replace(/<code>\s*\[Product Link:\s*([\s\S]*?)\]\s*<\/code>/gi, '$1');
+    // Strip any remaining <code>...</code> blocks
+    md = md.replace(/<code>([\s\S]*?)<\/code>/gi, '$1');
+
+    // ── 3. Remove Google Search tracking links, keep text ──
+    md = md.replace(/<a\b[^>]*href=["']https?:\/\/(?:www\.)?google\.com\/search[^"']*["'][^>]*>([\s\S]*?)<\/a>/gi, '$1');
+
+    // ── 4. Remove <a> wrappers around images (Blogger wraps imgs in links to full-size) ──
+    md = md.replace(/<a\b[^>]*href=["'][^"']*blogger[^"']*["'][^>]*>\s*(<img[^>]*>)\s*<\/a>/gi, '$1');
+    md = md.replace(/<a\b[^>]*>\s*(<img[^>]*>)\s*<\/a>/gi, '$1');
+
+    // ── 5. Structural HTML → Markdown ──
+    md = md.replace(/<\/?(header|section|article|main|footer|nav|figure|figcaption|aside)[^>]*>/gi, '');
+    md = md.replace(/<div[^>]*>/gi, '');
+    md = md.replace(/<\/div>/gi, '');
+
+    // Headings — capture content, convert to markdown
+    md = md.replace(/<h1[^>]*>([\s\S]*?)<\/h1>/gi, (_, text) => {
+        const clean = text.replace(/<[^>]+>/g, '').trim();
+        return clean ? `\n\n## ${clean}\n` : '';
+    });
+    md = md.replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, (_, text) => {
+        const clean = text.replace(/<[^>]+>/g, '').trim();
+        return clean ? `\n\n## ${clean}\n` : '';
+    });
+    md = md.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/gi, (_, text) => {
+        const clean = text.replace(/<[^>]+>/g, '').trim();
+        return clean ? `\n\n### ${clean}\n` : '';
+    });
+    md = md.replace(/<h4[^>]*>([\s\S]*?)<\/h4>/gi, (_, text) => {
+        const clean = text.replace(/<[^>]+>/g, '').trim();
+        return clean ? `\n\n#### ${clean}\n` : '';
+    });
+
+    // Paragraphs & line breaks
+    md = md.replace(/<br\s*\/?>/gi, '\n');
+    md = md.replace(/<p[^>]*>/gi, '\n\n');
+    md = md.replace(/<\/p>/gi, '');
+
+    // Bold / Strong
+    md = md.replace(/<(?:b|strong)>([\s\S]*?)<\/(?:b|strong)>/gi, '**$1**');
+    // Italic / Em
+    md = md.replace(/<(?:i|em)>([\s\S]*?)<\/(?:i|em)>/gi, '*$1*');
+
+    // Lists
+    md = md.replace(/<ul[^>]*>/gi, '\n');
+    md = md.replace(/<\/ul>/gi, '\n');
+    md = md.replace(/<ol[^>]*>/gi, '\n');
+    md = md.replace(/<\/ol>/gi, '\n');
+    md = md.replace(/<li[^>]*>([\s\S]*?)<\/li>/gi, '- $1\n');
+
+    // Images → Markdown
+    md = md.replace(/<img[^>]*alt=["']([^"']*)["'][^>]*src=["']([^"']+)["'][^>]*\/?>/gi, '![$1]($2)');
+    md = md.replace(/<img[^>]*src=["']([^"']+)["'][^>]*alt=["']([^"']*)["'][^>]*\/?>/gi, '![$2]($1)');
+    md = md.replace(/<img[^>]*src=["']([^"']+)["'][^>]*\/?>/gi, '![]($1)');
+
+    // Links → Markdown links
+    md = md.replace(/<a[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi, '[$2]($1)');
+
+    // ── 6. Cleanup ──
+    // Remove ANY remaining HTML tags
+    md = md.replace(/<[^>]+>/g, '');
+
+    // Decode entities
+    md = md.replace(/&nbsp;/g, ' ');
+    md = md.replace(/&amp;/g, '&');
+    md = md.replace(/&lt;/g, '<');
+    md = md.replace(/&gt;/g, '>');
+    md = md.replace(/&quot;/g, '"');
+
+    // Fix run-on headers: "text## Header" → "text\n\n## Header"
+    md = md.replace(/([^\n])(#{1,6}\s)/g, '$1\n\n$2');
+
+    // Fix list items that have blank line then bold text: "- \n\n**" → "- **"
+    md = md.replace(/-\s*\n\s*\n\s*\*\*/g, '- **');
+
+    // Remove lonely "#" lines (from empty heading tags)
+    md = md.replace(/^#+\s*$/gm, '');
+
+    // Strip `[Product Link: ...]` wrapper from markdown text if any remain after conversion
+    // Pattern: `[Product Link: [Text](url)]` → [Text](url)
+    md = md.replace(/`?\[Product Link:\s*(\[[^\]]+\]\([^)]+\))\s*\]`?/g, '$1');
+
+    // Collapse excessive blank lines
+    md = md.replace(/\n{3,}/g, '\n\n');
+
+    // ── 7. Fix internal links ──
+    md = md.replace(/https?:\/\/(?:www\.)?mittiandmoss\.com\/(\d{4})\/(\d{2})\/([^")\s]+)\.html[?]?/g, (match, y, m, slug) => {
+        return `/blog/${slug}`;
+    });
+    md = md.replace(/https?:\/\/(?:www\.)?mittiandmoss\.com\/p\/([^")\s]+)\.html/g, (match, slug) => {
+        return `/blog/${slug}`;
+    });
+
+    return md.trim();
 }
 
 async function migrate() {
@@ -35,106 +158,43 @@ async function migrate() {
     for (const entry of entries) {
         if (!entry.includes('</entry>')) continue;
 
-        // 1. Extract raw metadata
-        const rawTitle = extractTag(entry, 'title');
-        const title = unescapeHtml(rawTitle)
-            .replace(/<!\[CDATA\[/g, '')
-            .replace(/\]\]>/g, '');
+        const title = unescapeHtml(extractTag(entry, 'title'))
+            .replace(/<!\[CDATA\[/g, '').replace(/\]\]>/g, '');
 
         const published = extractTag(entry, 'published');
         const updated = extractTag(entry, 'updated');
         const date = new Date(published || updated);
 
-        // 2. Extract content
         const rawContent = extractTag(entry, 'content');
-        let content = unescapeHtml(rawContent)
-            .replace(/<!\[CDATA\[/g, '')
-            .replace(/\]\]>/g, '');
+        const content = unescapeHtml(rawContent)
+            .replace(/<!\[CDATA\[/g, '').replace(/\]\]>/g, '');
 
-        // 3. Extract Hero Image (First <img> found)
-        let heroImage = "";
+        // Hero image (first img)
+        let heroImage = '';
         const imgMatch = content.match(/<img[^>]+src=["']([^"']+)["']/i);
-        if (imgMatch) {
-            heroImage = imgMatch[1];
+        if (imgMatch) heroImage = imgMatch[1];
+
+        // Convert
+        let markdown = htmlToMarkdown(content);
+
+        // Remove duplicated hero image at start of body
+        if (heroImage) {
+            // Try various alt-text patterns
+            const heroPatterns = [
+                `![](${heroImage})`,
+            ];
+            for (const pat of heroPatterns) {
+                if (markdown.startsWith(pat)) {
+                    markdown = markdown.slice(pat.length).trim();
+                    break;
+                }
+            }
+            // Also try regex for hero image with any alt
+            const heroRe = new RegExp(`^!\\[[^\\]]*\\]\\(${heroImage.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\)`, 'm');
+            markdown = markdown.replace(heroRe, '').trim();
         }
 
-        // 4. Clean up specific Google/Blogger junk (Smart Links)
-        // Remove links to google.com/search?q=... but keep link text
-        // Handle attributes in any order, multi-line, etc.
-        content = content.replace(/<a\b[^>]*href=["']https?:\/\/(?:www\.)?google\.com\/search\?[^"']+["'][^>]*>([\s\S]*?)<\/a>/gi, '$1');
-
-        // 5. Affiliate Link Handling (Amazon)
-        // Post-process Amazon links in Markdown instead of HTML to be cleaner? 
-        // No, standard markdown doesn't support target="_blank".
-        // We must stick to HTML for these specific links if we want new tabs.
-        // Or we convert to markdown and trust the user to add a script?
-        // User requested "correct". Correct usually means new tab for external/affiliate.
-        // Let's use HTML for Amazon links.
-
-        content = content.replace(/<a\b([^>]*href=["'](?:https?:\/\/(?:www\.)?(?:amazon\.com|amzn\.to)[^"']*)["'][^>]*)>([\s\S]*?)<\/a>/gi, (match, attrs, text) => {
-            let newAttrs = attrs;
-            if (!newAttrs.includes('target=')) newAttrs += ' target="_blank"';
-            if (!newAttrs.includes('rel=')) newAttrs += ' rel="nofollow sponsored"';
-            return `<a${newAttrs}>${text}</a>`;
-        });
-
-        // 6. Basic HTML -> Markdown conversion
-
-        content = content.replace(/<header>[\s\S]*?<\/header>/gi, '');
-
-        let markdown = content
-            .replace(/<section>/gi, '')
-            .replace(/<\/section>/gi, '')
-            .replace(/<div[^>]*>/gi, '')
-            .replace(/<\/div>/gi, '')
-            .replace(/<br\s*\/?>/gi, '\n')
-            .replace(/<p>/gi, '\n\n')
-            .replace(/<\/p>/gi, '')
-            .replace(/<b>/gi, '**').replace(/<\/b>/gi, '**')
-            .replace(/<strong>/gi, '**').replace(/<\/strong>/gi, '**')
-            .replace(/<i>/gi, '*').replace(/<\/i>/gi, '*')
-            .replace(/<em>/gi, '*').replace(/<\/em>/gi, '*')
-
-            .replace(/<h[1-6][^>]*>/gi, '\n\n## ')
-            .replace(/<\/h[1-6]>/gi, '\n')
-
-            .replace(/<ul[^>]*>/gi, '\n')
-            .replace(/<\/ul>/gi, '\n')
-            .replace(/<li[^>]*>/gi, '\n- ')
-            .replace(/<\/li>/gi, '')
-
-            .replace(/<img[^>]+src=["']([^"']+)["'][^>]*\/?>/gi, '\n![]($1)\n')
-
-            // Convert remaining <a> to markdown (Amazon links might be caught here if they are simple <a>? 
-            // No, my regex above outputted <a ...> which matches <a ...>
-            // So I need to NOT convert valid HTML <a> tags if I want to keep them.
-            // But standard markdown link replacement `replace(/<a...>(.*)<\/a>/, '[$1]($2)')` is aggressive.
-            // I will skip this replacement for now and let the user decide?
-            // No, I'll allow ALL links to be Markdown for consistency, EXCEPT Amazon.
-            // So I need a negative lookahead? Or just process Amazon first to a placeholder.
-
-            // Better strategy: Convert EVERYTHING to Markdown. 
-            // If user wants target="_blank", I can add a rehype plugin to Astro config later.
-            // That is the "Astro way".
-            // So I will convert Amazon links to standard Markdown too.
-            .replace(/<a[^>]+href=["']([^"']+)["'][^>]*>(.*?)<\/a>/gi, '[$2]($1)');
-
-        // 7. Post-Markdown Cleanup
-        markdown = markdown
-            .replace(/&nbsp;/g, ' ')
-            .replace(/&amp;/g, '&')
-            .replace(/\n\s*\n\s*\n/g, '\n\n')
-            .trim();
-
-        // Fix headers
-        markdown = markdown.replace(/([^\n])(##+ )/g, '$1\n\n$2');
-
-        // Remove hero image from body
-        if (heroImage && markdown.startsWith(`![](${heroImage})`)) {
-            markdown = markdown.replace(`![](${heroImage})`, '').trim();
-        }
-
-        // 8. Extract Slug & Redirects
+        // Extract slug
         let originalUrl = '';
         const linkMatch = entry.match(/<link[^>]*rel=["']alternate["'][^>]*href=["']([^"']+)["'][^>]*\/?>/i);
         if (linkMatch) originalUrl = linkMatch[1];
@@ -142,16 +202,23 @@ async function migrate() {
             const fMatch = entry.match(/<blogger:filename>([^<]+)<\/blogger:filename>/i);
             if (fMatch) originalUrl = fMatch[1];
         }
-
-        if (!originalUrl) continue;
+        if (!originalUrl) {
+            console.log(`  Skipping "${title}" — no URL`);
+            continue;
+        }
 
         const urlParts = originalUrl.split('/');
         const slug = urlParts[urlParts.length - 1].replace('.html', '');
+        if (!slug) continue;
 
-        // Frontmatter construction
+        // Description (plain text, max 160 chars)
+        const plainText = stripAllTags(content);
+        const desc = plainText.slice(0, 155).replace(/"/g, '\\"') + '...';
+
+        // Write file
         const fileContent = `---
 title: "${title.replace(/"/g, '\\"')}"
-description: "${markdown.slice(0, 150).replace(/\n/g, ' ').replace(/"/g, '\\"') + '...'}"
+description: "${desc}"
 date: ${date.toISOString()}
 image: "${heroImage}"
 active: true
@@ -164,14 +231,13 @@ ${markdown}
         const fileName = `${slug}.md`;
         const filePath = path.join(process.cwd(), 'src', 'content', 'blog', fileName);
         fs.writeFileSync(filePath, fileContent);
-        console.log(`Rewrote: ${fileName}`);
+        console.log(`  ✓ ${fileName}`);
 
-        // Redirect Rule
+        // Redirect
         try {
             let oldPath = originalUrl;
             if (originalUrl.startsWith('http')) {
-                const urlObj = new URL(originalUrl);
-                oldPath = urlObj.pathname;
+                oldPath = new URL(originalUrl).pathname;
             }
             if (!oldPath.startsWith('/')) oldPath = '/' + oldPath;
             redirects.push(`${oldPath} /blog/${slug} 301`);
@@ -182,7 +248,7 @@ ${markdown}
 
     const redirectFile = path.join(process.cwd(), 'public', '_redirects');
     fs.writeFileSync(redirectFile, redirects.join('\n'));
-    console.log(`\nUpdated ${redirects.length} redirects.`);
+    console.log(`\n✓ ${count} posts migrated, ${redirects.length} redirects saved.`);
 }
 
 migrate().catch(console.error);
