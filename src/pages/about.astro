@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About — Mitti & Moss" description="Learn about Mitti & Moss — warm neutral, Japandi & minimalist home decor inspiration.">
+
+  <section class="about-hero">
+    <div class="container">
+      <h1>About Mitti & Moss</h1>
+      <p class="about-hero__tagline">Designing spaces that feel like home — rooted in nature, crafted with care.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+
+      <div class="about-block animate-on-scroll">
+        <h2>Our Story</h2>
+        <p><strong>Mitti & Moss</strong> was born from a simple belief — that great design should feel as natural as the earth beneath your feet and as alive as the moss on a forest floor.</p>
+        <p>We share warm neutral, Japandi & minimalist home decor ideas, limewash wall inspiration, cozy organic modern styling tips, and real homes you can actually recreate — no million-dollar budget required.</p>
+      </div>
+
+      <div class="about-block animate-on-scroll">
+        <h2>Our Philosophy</h2>
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <span class="philosophy-card__icon">🌿</span>
+            <h3>Rooted in Nature</h3>
+            <p>We draw inspiration from the natural world — earthy materials, organic forms, and biophilic design principles that bring the outdoors in.</p>
+          </div>
+          <div class="philosophy-card">
+            <span class="philosophy-card__icon">✋</span>
+            <h3>Crafted with Care</h3>
+            <p>Every detail matters. From the grain of the wood to the fall of light, we curate design ideas with intention and thoughtfulness.</p>
+          </div>
+          <div class="philosophy-card">
+            <span class="philosophy-card__icon">🏠</span>
+            <h3>Designed for Living</h3>
+            <p>Beautiful spaces should be lived in, not just looked at. Comfort, function, and warmth always come first in our recommendations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block animate-on-scroll">
+        <h2>What We Cover</h2>
+        <ul class="coverage-list">
+          <li>🎨 <strong>Warm Neutral Palettes</strong> — colors that comfort and inspire</li>
+          <li>🏯 <strong>Japandi Aesthetics</strong> — the perfect blend of Japanese minimalism and Scandinavian warmth</li>
+          <li>🖌️ <strong>Limewash & Textured Walls</strong> — organic wall treatments that add depth and character</li>
+          <li>🛋️ <strong>Room-by-Room Styling</strong> — practical guides for every space in your home</li>
+          <li>🌱 <strong>Natural Materials</strong> — clay, terracotta, linen, wood, and stone</li>
+          <li>💡 <strong>Budget-Friendly Tips</strong> — high-end looks without the high-end price</li>
+        </ul>
+      </div>
+
+      <div class="about-cta animate-on-scroll">
+        <h2>Let's Connect</h2>
+        <p>Have a question, collaboration idea, or just want to say hello?</p>
+        <a href="/contact" class="btn btn--primary">Get In Touch</a>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .about-hero {
+    padding: var(--space-3xl) 0 var(--space-xl);
+    text-align: center;
+    background: var(--color-warm-white);
+    border-bottom: 1px solid var(--color-sand);
+  }
+
+  .about-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-hero__tagline {
+    font-size: 1.15rem;
+    color: var(--color-warm-gray);
+    font-style: italic;
+    font-family: var(--font-heading);
+    font-weight: 400;
+  }
+
+  .about-block {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .about-block h2 {
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--color-sand);
+  }
+
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+
+  .philosophy-card {
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--color-warm-white);
+    border-radius: 12px;
+  }
+
+  .philosophy-card__icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .philosophy-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .philosophy-card p {
+    font-size: 0.9rem;
+    color: var(--color-warm-gray);
+  }
+
+  .coverage-list {
+    list-style: none;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .coverage-list li {
+    padding: 1rem 1.2rem;
+    background: var(--color-warm-white);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: transform var(--transition-fast);
+  }
+
+  .coverage-list li:hover {
+    transform: translateX(4px);
+  }
+
+  .about-cta {
+    text-align: center;
+    padding: var(--space-2xl);
+    background: var(--color-warm-white);
+    border-radius: 16px;
+  }
+
+  .about-cta h2 { margin-bottom: var(--space-xs); border: none; }
+  .about-cta p {
+    color: var(--color-warm-gray);
+    margin-bottom: var(--space-lg);
+  }
+
+  @media (max-width: 768px) {
+    .philosophy-grid { grid-template-columns: 1fr; }
+  }
+</style>

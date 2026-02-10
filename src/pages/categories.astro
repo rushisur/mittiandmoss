@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  { name: "Japandi", icon: "🏯", count: 8, description: "Japanese minimalism meets Scandinavian warmth" },
+  { name: "Warm Neutrals", icon: "🎨", count: 12, description: "Earthy palettes that comfort and inspire" },
+  { name: "Biophilic Design", icon: "🌿", count: 6, description: "Bringing the outdoors in, naturally" },
+  { name: "Minimalist Interiors", icon: "✨", count: 10, description: "Less is more — thoughtful, clean design" },
+  { name: "Limewash Walls", icon: "🖌️", count: 5, description: "Organic wall treatments with depth and character" },
+  { name: "Styling Tips", icon: "💡", count: 9, description: "Practical guides for every room" },
+  { name: "Natural Materials", icon: "🪨", count: 7, description: "Clay, terracotta, linen, wood, and stone" },
+  { name: "Living Room", icon: "🛋️", count: 11, description: "Modern living room ideas and inspiration" },
+  { name: "Budget Decor", icon: "💰", count: 6, description: "High-end looks without the price tag" },
+];
+---
+
+<BaseLayout title="Categories — Mitti & Moss" description="Browse Mitti & Moss articles by category: Japandi, warm neutrals, minimalist, biophilic, and more.">
+
+  <section class="cat-hero">
+    <div class="container">
+      <h1>Categories</h1>
+      <p>Browse by topic — find what inspires you</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cat-grid">
+        {categories.map(cat => (
+          <a href={`/categories/${cat.name.toLowerCase().replace(/\s+/g, '-')}`} class="cat-card animate-on-scroll">
+            <span class="cat-card__icon">{cat.icon}</span>
+            <h2 class="cat-card__name">{cat.name}</h2>
+            <p class="cat-card__desc">{cat.description}</p>
+            <span class="cat-card__count">{cat.count} articles</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .cat-hero {
+    padding: var(--space-3xl) 0 var(--space-xl);
+    text-align: center;
+    background: var(--color-warm-white);
+    border-bottom: 1px solid var(--color-sand);
+  }
+
+  .cat-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .cat-hero p {
+    color: var(--color-warm-gray);
+    font-size: 1.1rem;
+  }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .cat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-xl) var(--space-md);
+    background: white;
+    border-radius: 16px;
+    text-align: center;
+    transition: all var(--transition-smooth);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid transparent;
+  }
+
+  .cat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--color-sand);
+  }
+
+  .cat-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .cat-card__name {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cat-card__desc {
+    font-size: 0.9rem;
+    color: var(--color-warm-gray);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .cat-card__count {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-earth);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    background: var(--color-warm-white);
+  }
+
+  @media (max-width: 1024px) {
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .cat-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,26 @@
+local_backend: true
+backend:
+  name: github
+  repo: rushisur/mittiandmoss
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Cover Image URL", name: "image", widget: "string", required: false }
+      - { label: "Image Alt Text", name: "imageAlt", widget: "string", required: false }
+      - { label: "Tags", name: "tags", widget: "list", allow_add: true }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

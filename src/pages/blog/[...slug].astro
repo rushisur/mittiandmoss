@@ -1,0 +1,191 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = new Date(post.data.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={post.data.title} description={post.data.description} image={post.data.image}>
+  
+  <article class="post">
+    <!-- Post Header -->
+    <header class="post-header">
+      <div class="post-header__bg">
+        {post.data.image && (
+          <img src={post.data.image} alt={post.data.title} class="post-header__img" />
+        )}
+        <div class="post-header__overlay"></div>
+      </div>
+      
+      <div class="container container--narrow post-header__content">
+        <div class="post-meta animate-on-scroll">
+          <time datetime={post.data.date.toISOString()}>{formattedDate}</time>
+          {post.data.tags.length > 0 && (
+            <span class="post-meta__divider">•</span>
+          )}
+          <div class="post-tags">
+            {post.data.tags.map(tag => (
+              <span class="post-tag">{tag}</span>
+            ))}
+          </div>
+        </div>
+        
+        <h1 class="post-title animate-on-scroll">{post.data.title}</h1>
+        <p class="post-subtitle animate-on-scroll">{post.data.description}</p>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <div class="container container--narrow">
+      <div class="post-content animate-on-scroll">
+        <Content />
+      </div>
+
+      <!-- Share / Footer -->
+      <div class="post-footer">
+        <a href="/blog" class="btn btn--outline">← Back to Articles</a>
+      </div>
+    </div>
+  </article>
+
+</BaseLayout>
+
+<style>
+  /* Header */
+  .post-header {
+    position: relative;
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    color: white;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .post-header__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .post-header__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+
+  .post-header__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.3),
+      rgba(0,0,0,0.6)
+    );
+  }
+
+  .post-header__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: var(--space-md);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .post-tag {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+  }
+
+  .post-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    color: white;
+  }
+
+  .post-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+
+  /* Content */
+  .post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-charcoal);
+  }
+
+  /* Markdown Styles */
+  .post-content :global(h2) {
+    font-size: 1.8rem;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--color-earth-dark);
+  }
+
+  .post-content :global(h3) {
+    font-size: 1.4rem;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .post-content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .post-content :global(ul), .post-content :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .post-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content :global(img) {
+    border-radius: 8px;
+    margin: var(--space-lg) 0;
+  }
+
+  .post-footer {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-sand);
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .post-header { padding: var(--space-2xl) 0; }
+  }
+</style>

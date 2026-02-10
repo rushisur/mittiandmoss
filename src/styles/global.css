@@ -1,0 +1,300 @@
+/* =====================================================
+   Mitti & Moss — Global Design System
+   Warm neutrals, Japandi aesthetic, quiet luxury.
+   Refined for readability & retention.
+   ===================================================== */
+
+/* ---------- Google Fonts ---------- */
+/* Using Cormorant Garamond for headings (elegant, editorial) */
+/* Using Outfit for body (modern, geometric, high legibility) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+    /* Typography */
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', sans-serif;
+
+    /* Brand Colors - Refined for softer luxury */
+    --color-cream: #FDFBF8;
+    /* Slightly brighter cream for cleaner look */
+    --color-warm-white: #F7F4F0;
+    /* Soft background */
+    --color-sand: #E6DED6;
+    /* Subtle border color */
+    --color-earth: #967C5D;
+    /* Muted gold/bronze/earth */
+    --color-earth-dark: #705A40;
+    --color-moss: #576B46;
+    /* Deep organic green */
+    --color-moss-light: #7A9163;
+    --color-terracotta: #C9886D;
+    --color-charcoal: #222222;
+    /* Near black for text contrast */
+    --color-warm-gray: #8C847E;
+    /* Secondary text */
+    --color-overlay: rgba(0, 0, 0, 0.3);
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 3rem;
+    /* Increased for breathability */
+    --space-xl: 5rem;
+    --space-2xl: 8rem;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    --transition-slow: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    /* Shadows - softer, more diffuse */
+    --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 15px 40px -10px rgba(0, 0, 0, 0.08);
+    --shadow-strong: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+
+    /* Layout */
+    --max-width: 1280px;
+    /* Wider for modern feel */
+    --content-width: 760px;
+}
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    line-height: 1.65;
+    letter-spacing: -0.01em;
+    /* Tighter for modern feel */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+::selection {
+    background: var(--color-earth);
+    color: white;
+}
+
+/* ---------- Typography ---------- */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    /* Tighter tracking for headings */
+    color: var(--color-charcoal);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+h3 {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Using sans-serif for h3 occasionally works nicely, but sticking to serif for consistency usually better. Let's keep serif for h3 but styled differently. Actually, let's stick to serif for all proper headings. */
+h3 {
+    font-family: var(--font-heading);
+}
+
+p {
+    margin-bottom: 1.25em;
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 600;
+    color: var(--color-charcoal);
+}
+
+/* ---------- Container ---------- */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.container--narrow {
+    max-width: var(--content-width);
+}
+
+/* ---------- Section ---------- */
+.section {
+    padding: var(--space-xl) 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title h2 {
+    margin-bottom: var(--space-xs);
+}
+
+.section-title p {
+    color: var(--color-warm-gray);
+    font-size: 1.1rem;
+}
+
+/* ---------- Button ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 2.2rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    /* Removed uppercase for softer look */
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+    border-radius: 50px;
+    /* Pill shape is friendlier */
+}
+
+.btn--primary {
+    background: var(--color-charcoal);
+    color: white;
+}
+
+.btn--primary:hover {
+    background: var(--color-earth);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn--outline {
+    background: transparent;
+    color: var(--color-charcoal);
+    border: 1px solid var(--color-charcoal);
+}
+
+.btn--outline:hover {
+    background: var(--color-charcoal);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ---------- Tags ---------- */
+.tag {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background: var(--color-warm-white);
+    color: var(--color-earth-dark);
+    transition: all var(--transition-fast);
+}
+
+/* ---------- Utilities ---------- */
+.text-center {
+    text-align: center;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    :root {
+        --space-lg: 2.5rem;
+        --space-xl: 4rem;
+        --space-2xl: 6rem;
+    }
+}

@@ -1,0 +1,338 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = 'Mitti & Moss — Warm Neutral, Japandi & Minimalist Home Decor. Discover modern organic interiors, limewash walls, natural materials, and room-by-room styling guides.',
+  image = '/og-image.jpg',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="author" content="Mitti & Moss" />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+
+  <title>{title}</title>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mitti & Moss",
+    "url": "https://mittiandmoss.com",
+    "description": description,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mitti & Moss",
+      "url": "https://mittiandmoss.com"
+    }
+  })} />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="/" class="nav__logo">Mitti & Moss</a>
+      <button class="nav__toggle" aria-label="Toggle menu" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="/" class="nav__link">Home</a></li>
+        <li><a href="/blog" class="nav__link">Blog</a></li>
+        <li><a href="/categories" class="nav__link">Categories</a></li>
+        <li><a href="/about" class="nav__link">About</a></li>
+        <li><a href="/contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>Mitti & Moss</h3>
+          <p>Warm neutral, Japandi & minimalist home decor ideas for modern living.</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/mittiandmoss" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+            </a>
+            <a href="https://pinterest.com/mittiandmoss" aria-label="Pinterest" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.425 1.808-2.425.853 0 1.265.64 1.265 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.282a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.527-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.522 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/categories">Categories</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/affiliate-disclaimer">Affiliate Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; {new Date().getFullYear()} Mitti & Moss. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    toggle?.addEventListener('click', () => {
+      menu?.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
+
+<style>
+  /* ---------- Header ---------- */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 248, 245, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .nav__logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
+  }
+
+  .nav__menu {
+    display: flex;
+    list-style: none;
+    gap: 2.2rem;
+  }
+
+  .nav__link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
+    position: relative;
+    padding: 0.25rem 0;
+  }
+
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--color-earth);
+    transition: width var(--transition-smooth);
+  }
+
+  .nav__link:hover::after {
+    width: 100%;
+  }
+
+  .nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav__toggle span {
+    width: 24px;
+    height: 1.5px;
+    background: var(--color-charcoal);
+    transition: all var(--transition-fast);
+  }
+
+  .nav__toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
+  .nav__toggle.active span:nth-child(2) { opacity: 0; }
+  .nav__toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
+
+  /* ---------- Footer ---------- */
+  .footer {
+    background: var(--color-charcoal);
+    color: var(--color-sand);
+    padding: var(--space-2xl) 0 var(--space-lg);
+  }
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .footer__brand h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--color-cream);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.06em;
+  }
+
+  .footer__brand p {
+    font-size: 0.9rem;
+    color: var(--color-warm-gray);
+    line-height: 1.6;
+    max-width: 320px;
+  }
+
+  .footer__social {
+    display: flex;
+    gap: 1rem;
+    margin-top: var(--space-sm);
+  }
+
+  .footer__social a {
+    color: var(--color-warm-gray);
+    transition: color var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .footer__social a:hover {
+    color: var(--color-cream);
+    transform: translateY(-2px);
+  }
+
+  .footer__links h4 {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-cream);
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer__links ul {
+    list-style: none;
+  }
+
+  .footer__links li {
+    margin-bottom: 0.6rem;
+  }
+
+  .footer__links a {
+    font-size: 0.9rem;
+    color: var(--color-warm-gray);
+  }
+
+  .footer__links a:hover {
+    color: var(--color-cream);
+  }
+
+  .footer__bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: var(--space-md);
+    text-align: center;
+  }
+
+  .footer__bottom p {
+    font-size: 0.78rem;
+    color: var(--color-warm-gray);
+    letter-spacing: 0.05em;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 768px) {
+    .nav__toggle { display: flex; }
+
+    .nav__menu {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: var(--color-cream);
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition-smooth), padding var(--transition-smooth);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .nav__menu.active {
+      max-height: 400px;
+      padding: 1.5rem 0;
+    }
+
+    .nav__menu li {
+      padding: 0.8rem 0;
+    }
+
+    .footer__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+  }
+</style>

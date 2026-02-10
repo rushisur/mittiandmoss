@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact — Mitti & Moss" description="Get in touch with Mitti & Moss for collaborations, questions, or just to say hello.">
+
+  <section class="contact-hero">
+    <div class="container">
+      <h1>Get In Touch</h1>
+      <p>We'd love to hear from you</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="contact-grid">
+        <div class="contact-info animate-on-scroll">
+          <div class="contact-card">
+            <h3>📧 Email</h3>
+            <p><a href="mailto:hello@mittiandmoss.com">hello@mittiandmoss.com</a></p>
+          </div>
+          <div class="contact-card">
+            <h3>📱 Follow Us</h3>
+            <p><a href="https://instagram.com/mittiandmoss" target="_blank" rel="noopener">@mittiandmoss on Instagram</a></p>
+            <p><a href="https://pinterest.com/mittiandmoss" target="_blank" rel="noopener">Mitti & Moss on Pinterest</a></p>
+          </div>
+          <div class="contact-card">
+            <h3>🤝 Collaborations</h3>
+            <p>We're open to brand partnerships, sponsored content, and affiliate collaborations that align with our aesthetic. Reach out via email!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    padding: var(--space-3xl) 0 var(--space-xl);
+    text-align: center;
+    background: var(--color-warm-white);
+    border-bottom: 1px solid var(--color-sand);
+  }
+
+  .contact-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-hero p {
+    color: var(--color-warm-gray);
+    font-size: 1.1rem;
+  }
+
+  .contact-card {
+    padding: var(--space-lg);
+    background: var(--color-warm-white);
+    border-radius: 12px;
+    margin-bottom: var(--space-md);
+  }
+
+  .contact-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-card a {
+    color: var(--color-earth);
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-fast);
+  }
+
+  .contact-card a:hover {
+    border-color: var(--color-earth);
+  }
+</style>

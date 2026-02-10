@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map(post => ({
+    title: post.data.title,
+    description: post.data.description,
+    date: post.data.date.toISOString(),
+    image: post.data.image,
+    tags: post.data.tags,
+    url: `/blog/${post.slug}`,
+    featured: post.data.featured,
+  }));
+---
+
+<BaseLayout title="Blog — Mitti & Moss" description="Interior design tips, trends, and inspiration for warm neutral, Japandi & minimalist homes.">
+
+  <section class="blog-hero">
+    <div class="container">
+      <h1>The Journal</h1>
+      <p>Design ideas, styling tips & home decor inspiration</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="posts-grid">
+        {posts.map((post, i) => (
+          <PostCard {...post} featured={i === 0} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .blog-hero {
+    padding: var(--space-3xl) 0 var(--space-xl);
+    text-align: center;
+    background: var(--color-warm-white);
+    border-bottom: 1px solid var(--color-sand);
+  }
+
+  .blog-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-hero p {
+    color: var(--color-warm-gray);
+    font-size: 1.1rem;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  @media (max-width: 1024px) {
+    .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .posts-grid { grid-template-columns: 1fr; }
+  }
+</style>
