@@ -7,8 +7,8 @@ export const onRequest = async ({ request, env }) => {
         return new Response("Only GitHub is supported", { status: 400 });
     }
 
-    const client_id = env.GITHUB_CLIENT_ID;
-    const client_secret = env.GITHUB_CLIENT_SECRET;
+    const client_id = (env.GITHUB_CLIENT_ID || "").trim();
+    const client_secret = (env.GITHUB_CLIENT_SECRET || "").trim();
 
     if (!client_id || !client_secret) {
         return new Response("Missing GITHUB_CLIENT_ID or GITHUB_CLIENT_SECRET env vars", { status: 500 });
