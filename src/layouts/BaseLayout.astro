@@ -25,6 +25,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="author" content="Mitti & Moss" />
   <link rel="canonical" href={canonicalURL} />
 
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3E2L41G7QQ" is:inline></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3E2L41G7QQ');
+  </script>
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="PASTE_YOUR_GSC_CODE_HERE" />
+
+  <!-- Pinterest Verification -->
+  <meta name="p:domain_verify" content="82bfd2408a763486f59ccd8cabb49197" />
+
+  <!-- Bing Webmaster Tools Verification -->
+  <meta name="msvalidate.01" content="A94E5324F8A474A881D13BA68C5E1A48" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonicalURL} />
