@@ -4,7 +4,7 @@ description: "33 Christmas Tree Decoration Ideas for 2025 (Modern, Cozy &amp; Sm
 date: 2025-11-14T14:43:00.000Z
 image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFTQgZyLannyOapVKP5P3VN_Xtt9Yje4SHbgdplpd7KTMnzMPHymg5f3pMQUiHQF54-wrz5Is5IoA20BVkWuZUYZ53eBVr35inI7rEjmTwhxa8QTZzfn_G8k_I8uSnWT97KICFISq47fp0t5sbujA_pMuV8LoNichpLarCKFHLTtzm2AJD7xY_WHouOs42/w640-h640/blog%20chirtmans.png"
 active: true
-tags: ["interior", "decor"]
+tags: ["Seasonal Decor","Styling Tips"]
 ---
 
 # 33 Christmas Tree Decoration Ideas for 2025 (Modern, Cozy & Small-Space Friendly)

@@ -4,7 +4,7 @@ description: "&nbsp;Why Japandi still hits different in 2025 Japandi blends the 
 date: 2025-10-27T19:45:00.000Z
 image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBE6qT8SmBypZvEvM1CrRrXThIRLI0QSnJk5NCnUK_UJ9ODxQxLkR54Q8_mi1TNWa1rfCrzXpzJtK_Mc8ZnmBWxiJI5SaFo-tvkve1L-GAK7wTlv1xhXV8D9R11Cxb5fnRLdx_D4WvNyivo2F6bfg43OAWbGXBoRnQHzEMiWcP7XKOF7-gAX99hrPReO5U/w640-h426/Japandi%20Home%20Ideas.png"
 active: true
-tags: ["interior", "decor"]
+tags: ["Japandi","Living Room"]
 ---
 
 # Why Japandi still hits different in 2025

@@ -4,7 +4,7 @@ description: "Decorating a bedroom with green furniture can be a showstopper but
 date: 2025-10-25T11:59:00.000Z
 image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZXlBECEoonczeAiXgZau_ImTEKjRcTXQp6YaqYfeoMEwdt-YAPKTRt7bCxh2dUV8G0SGn0HbtfMzh5ZUhbx7MYKt2IdZXX8AeYchsLTj7ieKTi1UiUXCvf8YyjEDy80QQWdncUm-RWmmrS8RbtKLXPq3K0s6Do7YGyEBqf0rWZf3vM-CfNE2Raypi4RoW/w400-h400/Serene%20bedroom%20with%20moss-green%20upholstered%20headboard,%20natural%20wood%20nightstands,%20and%20potted%20plant.png"
 active: true
-tags: ["interior", "decor"]
+tags: ["Bedroom Ideas","Biophilic Design"]
 ---
 
 Decorating a bedroom with green furniture can be a 

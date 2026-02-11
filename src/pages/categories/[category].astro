@@ -1,0 +1,130 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  
+  // Collect all unique tags
+  const allTags = new Set();
+  allPosts.forEach(post => {
+    post.data.tags.forEach(tag => allTags.add(tag));
+  });
+
+  return [...allTags].map(tag => {
+    const slug = tag.toLowerCase().replace(/\s+/g, '-');
+    const filteredPosts = allPosts
+      .filter(post => post.data.tags.includes(tag))
+      .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    
+    return {
+      params: { category: slug },
+      props: { 
+        tag, 
+        posts: filteredPosts
+      },
+    };
+  });
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<BaseLayout 
+  title={`${tag} — Mitti & Moss`} 
+  description={`Browse ${tag} articles on Mitti & Moss. Warm neutral, Japandi & minimalist home decor inspiration.`}
+>
+
+  <section class="cat-hero">
+    <div class="container">
+      <a href="/categories" class="cat-hero__back">← All Categories</a>
+      <h1>{tag}</h1>
+      <p>{posts.length} {posts.length === 1 ? 'article' : 'articles'}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {posts.length > 0 ? (
+        <div class="posts-grid">
+          {posts.map(post => (
+            <PostCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date.toISOString()}
+              image={post.data.image}
+              tags={post.data.tags}
+              url={`/blog/${post.slug}`}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>No articles in this category yet. Check back soon!</p>
+          <a href="/blog" class="btn btn--outline">Browse All Articles</a>
+        </div>
+      )}
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .cat-hero {
+    padding: var(--space-3xl) 0 var(--space-xl);
+    text-align: center;
+    background: var(--color-warm-white);
+    border-bottom: 1px solid var(--color-sand);
+  }
+
+  .cat-hero__back {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--color-warm-gray);
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.05em;
+    transition: color var(--transition-fast);
+  }
+
+  .cat-hero__back:hover {
+    color: var(--color-earth);
+  }
+
+  .cat-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .cat-hero p {
+    color: var(--color-warm-gray);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: var(--space-2xl) 0;
+  }
+
+  .empty-state p {
+    margin-bottom: var(--space-lg);
+    color: var(--color-warm-gray);
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 1024px) {
+    .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .posts-grid { grid-template-columns: 1fr; }
+  }
+</style>

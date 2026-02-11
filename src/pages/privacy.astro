@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Privacy Policy — Mitti & Moss" description="Privacy Policy for Mitti and Moss. Learn how we handle your data.">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p>Last Updated: October 28, 2025</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow page-content">
+
+      <p>Mitti and Moss ("us", "we", or "our") operates the <a href="https://www.mittiandmoss.com">mittiandmoss.com</a> website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service.</p>
+
+      <h2>Information Collection and Use</h2>
+      <p>We collect several different types of information to provide and improve our Service to you.</p>
+      <p><strong>Personal Data:</strong> While using our Service, we may ask you to provide us with certain personally identifiable information (e.g., if you comment or contact us). This may include your email address and name.</p>
+      <p><strong>Usage Data:</strong> We may collect information on how the Service is accessed and used, including your computer's IP address, browser type, the pages you visit, time and date of visit, and other diagnostic data.</p>
+      <p><strong>Cookies:</strong> We use cookies and similar tracking technologies to track activity on our Service. You can instruct your browser to refuse all cookies or indicate when a cookie is being sent.</p>
+
+      <h2>Use of Data</h2>
+      <p>Mitti and Moss uses the collected data for purposes such as:</p>
+      <ul>
+        <li>To provide and maintain the Service</li>
+        <li>To monitor usage of the Service</li>
+        <li>To detect, prevent, and address technical issues</li>
+        <li>To serve personalized advertisements (via Google AdSense cookies, if applicable)</li>
+      </ul>
+
+      <h2>Google AdSense & DART Cookie</h2>
+      <p>Google, as a third-party vendor, uses cookies to serve ads on our Service. Google's use of the DART cookie enables it to serve ads based on your visit to our Service and other sites. Users may opt out by visiting the <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Ad and Content Network privacy policy</a>.</p>
+
+      <h2>Affiliate Disclosure</h2>
+      <p>This site participates in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate, we earn from qualifying purchases.</p>
+
+      <h2>Links to Other Sites</h2>
+      <p>Our Service may contain links to other sites not operated by us. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+
+      <h2>Changes to This Privacy Policy</h2>
+      <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, please contact us by email at <a href="mailto:hello@mittiandmoss.com"><strong>hello@mittiandmoss.com</strong></a>.</p>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: var(--space-3xl) 0 var(--space-xl);
+    text-align: center;
+    background: var(--color-warm-white);
+    border-bottom: 1px solid var(--color-sand);
+  }
+  .page-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  .page-hero p {
+    color: var(--color-warm-gray);
+    font-size: 1rem;
+  }
+  .page-content h2 {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--color-sand);
+  }
+  .page-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .page-content li {
+    margin-bottom: 0.5rem;
+  }
+  .page-content a {
+    color: var(--color-earth);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-fast);
+  }
+  .page-content a:hover {
+    border-color: var(--color-earth);
+  }
+</style>

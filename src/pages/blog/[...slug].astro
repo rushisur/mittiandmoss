@@ -177,6 +177,39 @@ const formattedDate = new Date(post.data.date).toLocaleDateString('en-US', {
     border-radius: 8px;
     margin: var(--space-lg) 0;
   }
+  /* Affiliate links — warm bronze with external icon */
+  .post-content :global(a[href*="amzn.to"]),
+  .post-content :global(a[href*="amazon.com"]) {
+    color: #9B6B3D;
+    font-weight: 500;
+    border-bottom: 1.5px solid rgba(155, 107, 61, 0.3);
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .post-content :global(a[href*="amzn.to"]:hover),
+  .post-content :global(a[href*="amazon.com"]:hover) {
+    color: #7A5530;
+    border-color: #7A5530;
+  }
+
+  .post-content :global(a[href*="amzn.to"])::after,
+  .post-content :global(a[href*="amazon.com"])::after {
+    content: " ↗";
+    font-size: 0.75em;
+    opacity: 0.6;
+  }
+
+  /* Regular content links */
+  .post-content :global(a:not([href*="amzn.to"]):not([href*="amazon.com"])) {
+    color: var(--color-earth);
+    border-bottom: 1px solid rgba(150, 124, 93, 0.25);
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .post-content :global(a:not([href*="amzn.to"]):not([href*="amazon.com"]):hover) {
+    color: var(--color-earth-dark);
+    border-color: var(--color-earth-dark);
+  }
 
   .post-footer {
     margin-top: var(--space-3xl);

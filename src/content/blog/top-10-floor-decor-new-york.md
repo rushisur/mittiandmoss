@@ -4,7 +4,7 @@ description: "Living in New York City means embracing compact spaces, but who sa
 date: 2025-11-19T12:19:00.000Z
 image: "https://res.cloudinary.com/drusd2mid/image/upload/v1763554364/nwxtxzauxpqd9ui34dky.jpg"
 active: true
-tags: ["interior", "decor"]
+tags: ["Living Room","Styling Tips"]
 ---
 
 Living in New York City means embracing compact spaces, but who says you can't have a big impact with your decor? I know the struggle of making a small apartment feel both luxurious and personal. The secret often lies in transforming your floor space!

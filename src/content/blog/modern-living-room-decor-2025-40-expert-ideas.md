@@ -4,7 +4,7 @@ description: "&nbsp;The 2025 Guide to Modern Living Room Decor: 40 Ideas Experts
 date: 2025-10-30T21:38:00.000Z
 image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkrz7Sfi3jUseI2wf1F1Bvg6UU4UFjJlDfPTSJ0W-nwjKhKjVnbmAG06iW-wA6Wtd1Ufr1IOlVMzIxBTkdMI5TKPrqTCFP1lZqccqN5I8DYRrIrgl3_EYRTa8Kr7e2Av6GoPKRHMht3Zndi-CqWEVFNCOMSvhQWxmwstFuY0iXByEGvvuk-Ev5QvkZSPkl/w640-h426/Minimalist%20Living%20Room%20Ideas.png"
 active: true
-tags: ["interior", "decor"]
+tags: ["Living Room","Design Trends"]
 ---
 
 # The 2025 Guide to Modern Living Room Decor: 40 Ideas Experts Are Using

@@ -4,7 +4,7 @@ description: "Transform Your Space into a Romantic SanctuaryReady to transform y
 date: 2026-01-06T19:12:00.000Z
 image: "https://res.cloudinary.com/drusd2mid/image/upload/v1767724561/s4um4opiemzafantqise.jpg"
 active: true
-tags: ["interior", "decor"]
+tags: ["Seasonal Decor","Styling Tips"]
 ---
 
 # Transform Your Space into a Romantic Sanctuary

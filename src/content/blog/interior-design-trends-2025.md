@@ -4,7 +4,7 @@ description: "The 2025 Interior Design Trends We’re Actually Excited About (An
 date: 2025-11-04T16:21:00.000Z
 image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFJ9VV9mmPo7UnczrRD8HmhQlnZT_7VCtcH1zKBHI2wmn-JfO7ps372kBoha0_zN7xL7doG9PCVgDuzgSWV94rIAfFbv7IqmIL0LnQgPTeql9RtEE2y3qEw3GOGT59dq4TSU323o9GyqT0XUQRx_r-MXYRhm3mUCKF0RGSkKTUevqKDjCxWGMh8Z_yx0Qb/w640-h360/2.png"
 active: true
-tags: ["interior", "decor"]
+tags: ["Design Trends","Warm Neutrals"]
 ---
 
 # The 2025 Interior Design Trends We’re Actually Excited About (And How to Get Them)

@@ -4,7 +4,7 @@ description: "You want walls that feel calm, rich, and a little moody, right? Sa
 date: 2025-10-24T21:51:00.000Z
 image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5DiG1pqKoIkhi3kosrvvxPYX_uGrYXuliwHY1eQv9tXm9XkpE2-eZOqd1jAHz0KG0PjrGOeoeiQHrAzfd9OtTXHdWA3CIHvVzOAUQF7pJLzuGZPIpwnKY1NBYyBJHWlvEFHKJJMYcvc8j97Ctmmo6p9Kq9on47zbmKEzoo6qKeu15hnv-uiRvT5sn8rdX/w640-h426/ChatGPT%20Image%20Oct%2025,%202025,%2012_50_38%20AM.png"
 active: true
-tags: ["interior", "decor"]
+tags: ["Limewash Walls","Living Room"]
 ---
 
 You want walls that feel calm, rich, and a little moody, right? Same. I reach for limewash when I want texture without drama and color that whispers, not yells. I love how this finish softens light and adds depth that regular paint just can’t fake. Ready to give your space that lived-in, [designer ](/blog/interior-design-trends-2025)vibe?

@@ -1,17 +1,41 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const categories = [
-  { name: "Japandi", icon: "🏯", count: 8, description: "Japanese minimalism meets Scandinavian warmth" },
-  { name: "Warm Neutrals", icon: "🎨", count: 12, description: "Earthy palettes that comfort and inspire" },
-  { name: "Biophilic Design", icon: "🌿", count: 6, description: "Bringing the outdoors in, naturally" },
-  { name: "Minimalist Interiors", icon: "✨", count: 10, description: "Less is more — thoughtful, clean design" },
-  { name: "Limewash Walls", icon: "🖌️", count: 5, description: "Organic wall treatments with depth and character" },
-  { name: "Styling Tips", icon: "💡", count: 9, description: "Practical guides for every room" },
-  { name: "Natural Materials", icon: "🪨", count: 7, description: "Clay, terracotta, linen, wood, and stone" },
-  { name: "Living Room", icon: "🛋️", count: 11, description: "Modern living room ideas and inspiration" },
-  { name: "Budget Decor", icon: "💰", count: 6, description: "High-end looks without the price tag" },
-];
+const allPosts = await getCollection('blog');
+
+// Define display info for categories (icon, description)
+const categoryMeta = {
+  "Japandi": { icon: "🏯", description: "Japanese minimalism meets Scandinavian warmth" },
+  "Warm Neutrals": { icon: "🎨", description: "Earthy palettes that comfort and inspire" },
+  "Biophilic Design": { icon: "🌿", description: "Bringing the outdoors in, naturally" },
+  "Living Room": { icon: "🛋️", description: "Modern living room ideas and inspiration" },
+  "Bedroom Ideas": { icon: "🛏️", description: "Create your perfect restful retreat" },
+  "Limewash Walls": { icon: "🖌️", description: "Organic wall treatments with depth and character" },
+  "Styling Tips": { icon: "💡", description: "Practical guides for every room" },
+  "Natural Materials": { icon: "🪨", description: "Clay, terracotta, linen, wood & stone" },
+  "Budget Decor": { icon: "💰", description: "High-end looks without the price tag" },
+  "Design Trends": { icon: "✨", description: "What's shaping interiors right now" },
+  "Seasonal Decor": { icon: "🎄", description: "Holiday & seasonal styling inspiration" },
+};
+
+// Build category list from actual posts
+const tagCounts = {};
+allPosts.forEach(post => {
+  post.data.tags.forEach(tag => {
+    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+  });
+});
+
+const categories = Object.entries(tagCounts)
+  .map(([name, count]) => ({
+    name,
+    count,
+    icon: categoryMeta[name]?.icon || "📁",
+    description: categoryMeta[name]?.description || `Browse ${name} articles`,
+    slug: name.toLowerCase().replace(/\s+/g, '-'),
+  }))
+  .sort((a, b) => b.count - a.count);
 ---
 
 <BaseLayout title="Categories — Mitti & Moss" description="Browse Mitti & Moss articles by category: Japandi, warm neutrals, minimalist, biophilic, and more.">
@@ -27,11 +51,11 @@ const categories = [
     <div class="container">
       <div class="cat-grid">
         {categories.map(cat => (
-          <a href={`/categories/${cat.name.toLowerCase().replace(/\s+/g, '-')}`} class="cat-card animate-on-scroll">
+          <a href={`/categories/${cat.slug}`} class="cat-card animate-on-scroll">
             <span class="cat-card__icon">{cat.icon}</span>
             <h2 class="cat-card__name">{cat.name}</h2>
             <p class="cat-card__desc">{cat.description}</p>
-            <span class="cat-card__count">{cat.count} articles</span>
+            <span class="cat-card__count">{cat.count} {cat.count === 1 ? 'article' : 'articles'}</span>
           </a>
         ))}
       </div>

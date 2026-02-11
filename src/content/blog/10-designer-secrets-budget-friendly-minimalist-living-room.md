@@ -4,7 +4,7 @@ description: "&nbsp;10 Designer Secrets for a Budget-Friendly Minimalist Living 
 date: 2025-11-01T18:30:00.000Z
 image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixnTIeNocG5IEAfpeeB3YZOM7-fGM4Z3BpMAE7pqZCkqDSUccFggCIqC0GcMEod9uet_xSMkdz4kWmS5H66KpYh7TmWjvM0bhzXLfQuX519GPzvtAYdW8G9wJvL3X2rm-ZUTDj6qUm5YXD6xfNEZt15uIuV00XMguZnTqXq2XowdEODaYWV9P8bag7hiKS/w640-h426/minimalist.png"
 active: true
-tags: ["interior", "decor"]
+tags: ["Budget Decor","Living Room"]
 ---
 
 # 10 Designer Secrets for a Budget-Friendly Minimalist Living Room
