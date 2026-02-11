@@ -1,6 +1,6 @@
 ---
 title: "The 2025 Interior Design Trends We’re Actually Excited About (And How to Get Them)"
-description: "The 2025 Interior Design Trends We’re Actually Excited About (And How to Get Them)Let's be honest for a second. Most \"trend\" articles are... a little borin..."
+description: "From the brown-aissance to curved furniture and limewash walls — here are the 2025 interior design trends actually worth trying, with tips to get the look."
 date: 2025-11-04T16:21:00.000Z
 image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFJ9VV9mmPo7UnczrRD8HmhQlnZT_7VCtcH1zKBHI2wmn-JfO7ps372kBoha0_zN7xL7doG9PCVgDuzgSWV94rIAfFbv7IqmIL0LnQgPTeql9RtEE2y3qEw3GOGT59dq4TSU323o9GyqT0XUQRx_r-MXYRhm3mUCKF0RGSkKTUevqKDjCxWGMh8Z_yx0Qb/w640-h360/2.png"
 active: true
@@ -19,7 +19,7 @@ Instead, we’re *finally* seeing a massive shift toward spaces that feel... wel
 
 So, if you’re tired of the cold, minimalist void and ready for something that feels like a home, you’re in the right place. These are the 2025 trends that matter. Ready to see what I mean?
 
-# The "Brown-aissance" Is Here (And It’s About Time)
+## The "Brown-aissance" Is Here (And It’s About Time)
 ![A minimalist room showcasing the "brown-aissance" with a deep terracotta wall, a sleek walnut media console, and a brown corduroy armchair.](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8fyOMblQU7e-6YwhR3z4PwJEAxDErk5WAC1V_3t6snshpbkj3duA83ssoErvKkvE6yrFMHUC_WCwQVAmRMF3GxvtON84e-QP4cek9MlxO87SWY7Y_iv5LImJv0gNvf3yl0N1HsybV4ZggYIPrK2e4w6OPMD-oCQMCJWnUYoc9yyTWIDP2GiNtWp1hA7UZ/w640-h360/4.png)
 
 Remember when we all collectively decided to paint every single wall in our homes a lovely, uninspired shade of "builder's beige" or "depressing gray"? Yeah, we’re all formally apologizing for that now.
@@ -45,8 +45,8 @@ My personal obsession? Mixing brown with black. A black metal frame on a walnut 
 
 Why did we ever think a sterile white box was "relaxing," anyway? IMO, 2025 is the year our homes finally give us a warm welcome.
 
-# Biophilia 2.0: It's Not Just a Plant in the Corner
-![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6-J8auKuLcQAzEFxxCy3plVB5TeYrsrSbsLlnLO_uBNQrw05-9q8B8rXzRVchLFmURa3TaU1_j7_U73gyf2mHZn7R6U60prJYs9yR0YncP-4_zthcC44-D2sAOFDPVRH4I6KR_RTd4weyGipFH_gKW0OSVuNHz0alqoUKzov0VIycQfz1WhC8nHVGZx61/w640-h360/1.png)
+## Biophilia 2.0: It's Not Just a Plant in the Corner
+![Cosy living room interior with warm earthy colour palette and textured decor](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6-J8auKuLcQAzEFxxCy3plVB5TeYrsrSbsLlnLO_uBNQrw05-9q8B8rXzRVchLFmURa3TaU1_j7_U73gyf2mHZn7R6U60prJYs9yR0YncP-4_zthcC44-D2sAOFDPVRH4I6KR_RTd4weyGipFH_gKW0OSVuNHz0alqoUKzov0VIycQfz1WhC8nHVGZx61/w640-h360/1.png)
 
 Okay, we’ve all been stuffing our homes with fiddle-leaf figs and monsteras for years. We get it. "Plants are good."
 
@@ -71,7 +71,7 @@ This trend is perfect for us at Mitti & Moss because it’s literally in our nam
 
 This is about creating a space that calms your nervous system the second you walk in the door. And who doesn't need more of that?
 
-# Texture Is the New Pattern
+## Texture Is the New Pattern
 
 If you’re not touching your walls, you’re doing 2025 wrong.
 
@@ -95,7 +95,7 @@ If your sofa is a soft, smooth velvet, pair it with a **rough-hewn wooden coffee
 
 This tactile trend is all about slowing down and engaging with your physical surroundings. It’s cozy, sophisticated, and deeply human.
 
-# Sustainable & Artisanal (AKA "Conscious Decor")
+## Sustainable & Artisanal (AKA "Conscious Decor")
 
 This one is my personal favorite, and it’s one of the biggest trending interior design topics for 2025.
 
@@ -117,7 +117,7 @@ That’s the core idea here.
 
 This trend isn't just about "being green"—it's about creating a home that is truly, uniquely *yours*.
 
-# "Quiet Luxury" & Curated Spaces
+## "Quiet Luxury" & Curated Spaces
 
 You’ve probably heard the "quiet luxury" buzzword in fashion. Well, now it's in our homes.
 
@@ -139,7 +139,7 @@ It’s not about minimalism (having no stuff) or "cluttercore" (having *all* the
 
 It’s intentional. It’s personal. It's about surrounding yourself *only* with things that you find beautiful, useful, or meaningful. This, more than any specific color, is the *real* trend for 2025.
 
-# So, What’s the Big Takeaway?
+## So, What’s the Big Takeaway?
 
 If I had to sum up all the 2025 interior design trends, it’s this: **We are finally creating homes that feel as good as they look.**
 
