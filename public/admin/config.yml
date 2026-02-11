@@ -3,7 +3,7 @@ backend:
   name: github
   repo: rushisur/mittiandmoss
   branch: main
-  base_url: https://mittiandmoss.pages.dev
+  base_url: https://mittiandmoss.com
   auth_endpoint: oauth/authorize
 
 media_folder: "public/images/uploads"
