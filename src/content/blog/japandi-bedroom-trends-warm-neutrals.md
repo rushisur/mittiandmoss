@@ -2,7 +2,7 @@
 title: "Japandi Bedroom Trends 2025: Calm Oasis with Warm Neutrals"
 description: "Create a Japandi bedroom that calms you the moment you walk in. Warm neutrals, organic shapes, low platform beds and layered linen — a practical 2025 guide."
 date: 2025-10-28T21:09:00.000Z
-image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNGik_KntULdunP5THp-92ooBhi-mRnviLTZEtgKgG5V-pO-yqA62XHBMovduTufljgbQdT096eRIOWWZ5b-zqcBNtBqDINL_DHCf71H4Nuae7iiv4ITDYFgvo3QVLOPvogtF0XXVyxAkpN-1e0ZaLtzXKKr-vngsk0K0UKqDoe6jShWANiv9c4_mYkZHf/w640-h426/ChatGPT%20Image%20Oct%2029,%202025,%2012_59_00%20AM.png"
+image: "../../assets/images/blog/japandi-bedroom-trends-warm-neutrals/hero-ChatGPT_20Image_20Oct_2029__202025__2012_59_00_20AM.png"
 active: true
 tags: ["Japandi","Bedroom Ideas"]
 ---

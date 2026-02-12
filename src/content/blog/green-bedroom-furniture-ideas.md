@@ -2,7 +2,7 @@
 title: "How to Style Green Bedroom Furniture: Tips & Ideas"
 description: "Green bedroom furniture can be a showstopper when styled right. Tips on pairing sage, olive and emerald pieces with warm neutrals, wood tones and soft lighting."
 date: 2025-10-25T11:59:00.000Z
-image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZXlBECEoonczeAiXgZau_ImTEKjRcTXQp6YaqYfeoMEwdt-YAPKTRt7bCxh2dUV8G0SGn0HbtfMzh5ZUhbx7MYKt2IdZXX8AeYchsLTj7ieKTi1UiUXCvf8YyjEDy80QQWdncUm-RWmmrS8RbtKLXPq3K0s6Do7YGyEBqf0rWZf3vM-CfNE2Raypi4RoW/w400-h400/Serene%20bedroom%20with%20moss-green%20upholstered%20headboard,%20natural%20wood%20nightstands,%20and%20potted%20plant.png"
+image: "../../assets/images/blog/green-bedroom-furniture-ideas/hero-Serene_20bedroom_20with_20moss-green_20upholstered_20headboard__20natural_20wood_20nightstands__20and_20potted_20plant.png"
 active: true
 tags: ["Bedroom Ideas","Biophilic Design"]
 ---

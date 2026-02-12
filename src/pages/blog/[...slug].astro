@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -46,6 +47,30 @@ const articleSchema = {
 <BaseLayout title={post.data.title} description={post.data.description} image={post.data.image}>
   
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://mittiandmoss.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://mittiandmoss.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.data.title,
+        "item": `https://mittiandmoss.com/blog/${post.slug}`
+      }
+    ]
+  })} />
 
   <article class="post">
     <!-- Post Header -->
@@ -85,6 +110,10 @@ const articleSchema = {
       <div class="post-footer">
         <a href="/blog" class="btn btn--outline">← Back to Articles</a>
       </div>
+    </div>
+    
+    <div class="container">
+      <RelatedPosts currentSlug={post.slug} tags={post.data.tags} />
     </div>
   </article>
 

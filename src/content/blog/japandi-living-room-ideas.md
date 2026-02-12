@@ -2,7 +2,7 @@
 title: "Japandi Living Room Ideas 2025: Warm Minimalism & Earthy Neutrals"
 description: "Japandi living room ideas for 2025: low-profile furniture, warm neutral palettes, paper pendant lights and organic textures. Plus shoppable picks for every budget."
 date: 2025-10-27T19:45:00.000Z
-image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBE6qT8SmBypZvEvM1CrRrXThIRLI0QSnJk5NCnUK_UJ9ODxQxLkR54Q8_mi1TNWa1rfCrzXpzJtK_Mc8ZnmBWxiJI5SaFo-tvkve1L-GAK7wTlv1xhXV8D9R11Cxb5fnRLdx_D4WvNyivo2F6bfg43OAWbGXBoRnQHzEMiWcP7XKOF7-gAX99hrPReO5U/w640-h426/Japandi%20Home%20Ideas.png"
+image: "../../assets/images/blog/japandi-living-room-ideas/hero-Japandi_20Home_20Ideas.png"
 active: true
 tags: ["Japandi","Living Room"]
 ---
@@ -229,7 +229,7 @@ Hand-thrown ceramic vase, incense set, reed diffuser – quiet ritual
 
 Affiliate disclosure placeholder:“As an Amazon Associate, I earn from qualifying purchases.”
 
-![Japandi living room mood board with organic shapes and warm neutral tones](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjg-tHxQrY29TvxjPzR33WIxVRONGadGn8VeZg9ToL05_Hb-DnOSMvpVlNgTyw1MUR7LmpYLawoXI5KdXdr3uHd8qzTLzOygrpVdc_pka8SOKI2VScp0aq2pb5Z6Omr3SNeSde_25yY1Uxn2XgXZiqCmynCVOORNoul_7GdMLfZWLWjRCuIaRBS4RtFFl2Z/w400-h400/Gemini_Generated_Image_jh9ftyjh9ftyjh9f_processed_by_imagy.png)
+![Japandi living room mood board with organic shapes and warm neutral tones](../../assets/images/blog/japandi-living-room-ideas/Gemini_Generated_Image_jh9ftyjh9ftyjh9f_processed_by_imagy.png)
 
 ## Styling formula you can copy
 

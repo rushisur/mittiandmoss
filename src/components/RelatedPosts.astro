@@ -1,0 +1,124 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+interface Props {
+  currentSlug: string;
+  tags: string[];
+}
+
+const { currentSlug, tags } = Astro.props;
+
+const posts = await getCollection('blog', ({ data }) => {
+  return data.active !== false;
+});
+
+const relatedPosts = posts
+  .filter((post) => post.slug !== currentSlug)
+  .map((post) => {
+    const commonTags = post.data.tags.filter((tag) => tags.includes(tag)).length;
+    return {
+      ...post,
+      commonTags,
+    };
+  })
+  .sort((a, b) => b.commonTags - a.commonTags)
+  .slice(0, 3);
+---
+
+{
+  relatedPosts.length > 0 && (
+    <section class="related-posts">
+      <h3 class="related-posts__title">You Might Also Like</h3>
+      <div class="related-posts__grid">
+        {relatedPosts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="related-card">
+            <div class="related-card__image">
+              {post.data.image && (
+                <Image
+                  src={post.data.image}
+                  alt={post.data.title}
+                  width={400}
+                  height={250}
+                  format="webp"
+                  fit="cover"
+                />
+              )}
+            </div>
+            <div class="related-card__content">
+              <span class="related-card__tag">{post.data.tags[0]}</span>
+              <h4 class="related-card__title">{post.data.title}</h4>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .related-posts {
+    margin-top: var(--space-3xl);
+    border-top: 1px solid var(--color-sand);
+    padding-top: var(--space-xl);
+  }
+
+  .related-posts__title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-earth-dark);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+  }
+
+  .related-posts__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .related-card {
+    display: block;
+    text-decoration: none;
+    transition: transform var(--transition-fast);
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .related-card__image {
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    margin-bottom: var(--space-sm);
+    background: var(--color-sand-light);
+  }
+
+  .related-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+  }
+
+  .related-card:hover .related-card__image img {
+    transform: scale(1.05);
+  }
+
+  .related-card__tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-earth);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .related-card__title {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: var(--color-earth-dark);
+    margin: 0;
+  }
+</style>

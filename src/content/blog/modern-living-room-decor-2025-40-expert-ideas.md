@@ -2,7 +2,7 @@
 title: "The 2025 Guide to Modern Living Room Decor: 40 Ideas Experts Are Using"
 description: "40 expert-backed modern living room ideas for 2025 — from curved sofas and travertine accents to layered lighting and earthy colour palettes you can actually recreate."
 date: 2025-10-30T21:38:00.000Z
-image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkrz7Sfi3jUseI2wf1F1Bvg6UU4UFjJlDfPTSJ0W-nwjKhKjVnbmAG06iW-wA6Wtd1Ufr1IOlVMzIxBTkdMI5TKPrqTCFP1lZqccqN5I8DYRrIrgl3_EYRTa8Kr7e2Av6GoPKRHMht3Zndi-CqWEVFNCOMSvhQWxmwstFuY0iXByEGvvuk-Ev5QvkZSPkl/w640-h426/Minimalist%20Living%20Room%20Ideas.png"
+image: "../../assets/images/blog/modern-living-room-decor-2025-40-expert-ideas/hero-Minimalist_20Living_20Room_20Ideas.png"
 active: true
 tags: ["Living Room","Design Trends"]
 ---
@@ -102,9 +102,9 @@ Start with the rug—it defines the zone. Position a curved or modular sofa faci
 
 Style with one large art moment, branches or flowers in a ceramic vase, and five objects max on the coffee table. That's it. Five objects. Not fifteen.
 
-![Evening modern living room with layered lighting, microcement wall, curved sofa, and jute-wool rug for quiet luxury in 2025.](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8y8VUP-x0WN9VKDcOY-2c1LcoEu1ipLf_QBdxnTIfBxHnUQFI8dLVn93aDI0Z_0lAePOAhf64Ilm5DVQkkkfmBdQSm8PG8l64ZjoZm45ut8C15mRj4KF791ScYvA81WsDLTMUvslN4O648AQtWbjh3Q7JlTZICU5UMYmcmUDPbHWhYobeUBJ9_GI75dpM/w400-h266/Living%20Room%20Ilustration.png)
+![Evening modern living room with layered lighting, microcement wall, curved sofa, and jute-wool rug for quiet luxury in 2025.](../../assets/images/blog/modern-living-room-decor-2025-40-expert-ideas/Living_20Room_20Ilustration.png)
 
-![Editorial flat lay of 2025 living room finishes: oak, travertine, linen, bouclé, warm paints and soft metals.](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiQZErXVOqaZ9jlFZUsfNfJw8XUguAD3ZLoJDjrbHflgfii4KmjeIVOzWoJa42k1dNaQC5OgL9R9XVzsVAWJK7c9d7b1TqYgGk5Nv4Z7tsK-l_ntzrwiU5RnpEI5tnJeUj9N_T5u3XsWJbr5-ByozVhGRldMHmpcXY26RBNE01A197ycbTUwYxVN4tPCcD/w400-h266/Textures.png)
+![Editorial flat lay of 2025 living room finishes: oak, travertine, linen, bouclé, warm paints and soft metals.](../../assets/images/blog/modern-living-room-decor-2025-40-expert-ideas/Textures.png)
 
 ## Bottom Line
 

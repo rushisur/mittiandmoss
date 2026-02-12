@@ -2,7 +2,7 @@
 title: "33 Christmas Tree Decoration Ideas for 2025 (Modern, Cozy & Small-Space Friendly)"
 description: "33 Christmas tree ideas for 2025: minimalist Scandinavian, rustic farmhouse, small-space solutions and bold colour themes. Budget-friendly tips for every style."
 date: 2025-11-14T14:43:00.000Z
-image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFTQgZyLannyOapVKP5P3VN_Xtt9Yje4SHbgdplpd7KTMnzMPHymg5f3pMQUiHQF54-wrz5Is5IoA20BVkWuZUYZ53eBVr35inI7rEjmTwhxa8QTZzfn_G8k_I8uSnWT97KICFISq47fp0t5sbujA_pMuV8LoNichpLarCKFHLTtzm2AJD7xY_WHouOs42/w640-h640/blog%20chirtmans.png"
+image: "../../assets/images/blog/christmas-tree-decoration-ideas/hero-blog_20chirtmans.png"
 active: true
 tags: ["Seasonal Decor","Styling Tips"]
 ---
@@ -64,7 +64,7 @@ You cannot fake a good tree on a bad base. You choose the right tree, the right 
 **Essentials to grab:**[ Warm white string lights](https://amzn.to/4i3FrPV), [micro fairy lights](https://amzn.to/3LDLY7M).
 
 ## 3. Christmas Tree Color Palettes for 2025 That Look Luxe
-![Modern Christmas tree decorated with warm neutral ornaments and wooden accents](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKI27PjiIVYsA6o77nu5FVe9TTKH3w2QeNoiyVjuI9s9ios62N_MGd4-Mh_pmk0Kl_NTu3ltitLPQY1aAMyja1pUEZ1l06rZOjKDPCATllpfQzCCi2xc4uK94W7_gtIW-kJp6eRlLmUhhTAcIn2L_gtDEXuByhPxcvPCZiloXNjSGlEuqlyUum0qxZ-iPa/w640-h640/c2.png)
+![Modern Christmas tree decorated with warm neutral ornaments and wooden accents](../../assets/images/blog/christmas-tree-decoration-ideas/c2.png)
 
 You skip random rainbow chaos and commit to a **2–3 color palette**. That rule alone makes your tree look designer.
 
@@ -99,7 +99,7 @@ Ivory sheer ribbon](https://amzn.to/4p6iy0n),
 **Non-negotiable:** If an ornament ignores your palette or theme, you retire it for this year. You protect the overall look.
 
 ## 4. Small Apartment & Balcony Christmas Tree Ideas
-![Small-space Christmas tree idea with minimalist Scandinavian decorations](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkJ_d2xKBkTtJpVxoJ6BYa6-UARB7LtFhy-gCe_J6S6DJ9itBhlmrBNrJv_LXYKeFYtECvYhpsDkrHVrlevbfpYAQqe7eOhPIHQ6ELDe0v8i5GOXAh3ReMSt-GiM0Xb13VifQo8d9SZyMjbTZ7CYp94cDufiPaVuyDyEgpdMZAX6PgpxhZM__iGkop51Sl/w400-h400/c3.png)
+![Small-space Christmas tree idea with minimalist Scandinavian decorations](../../assets/images/blog/christmas-tree-decoration-ideas/c3.png)
 
 Your space feels small, but you style it like a strategy, not a struggle.
 

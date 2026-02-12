@@ -2,7 +2,7 @@
 title: "15 Best Valentine Decoration Ideas for Home"
 description: "15 Valentine decoration ideas that feel romantic without the cheese. Soft lighting, textured throws, scented candles and subtle colour palettes for every room."
 date: 2026-01-06T19:12:00.000Z
-image: "https://res.cloudinary.com/drusd2mid/image/upload/v1767724561/s4um4opiemzafantqise.jpg"
+image: "../../assets/images/blog/valentine-decoration-ideas-for-home/hero-s4um4opiemzafantqise.jpg"
 active: true
 tags: ["Seasonal Decor","Styling Tips"]
 ---
@@ -15,7 +15,7 @@ The good news—you don't need to hire a decorator or spend a fortune to make yo
 
 *As an Amazon Associate, I earn from qualifying purchases.*
 
-![Detail shot of romantic home decor with warm lighting and soft textures](https://res.cloudinary.com/drusd2mid/image/upload/v1767724561/s4um4opiemzafantqise.jpg)
+![Detail shot of romantic home decor with warm lighting and soft textures](../../assets/images/blog/valentine-decoration-ideas-for-home/s4um4opiemzafantqise.jpg)
 
 ## Start With the Living Room
 
@@ -35,7 +35,7 @@ Combine those with floor lamps on dimmers and a few candles, and the whole room 
 
 ## Your Front Door Sets the Tone
 
-![Valentine decorated front entrance with romantic wreath and pink accents](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOMB7k7zuoCgwS-439SrtcwFNri9qRuFagrE7Oevl_hMxmATSMxxbK5C-Ek5Rib9McbcOAdUTVwmjJw4GXQAhUX452t6535WecJh7TBerF_BS-VaAFSSejv4MtgBJFHELUK0oxQKLajeBMhFD9tkksQ2DhbHIg73U6VeHZ-ZoIrHBBa-fS2W4EEsRh-ul1/w266-h400/pin.png)
+![Valentine decorated front entrance with romantic wreath and pink accents](../../assets/images/blog/valentine-decoration-ideas-for-home/pin.png)
 
 This is something most people skip entirely—but a [Valentine's Day wreath](https://amzn.to/3YonIK7) on your front door immediately signals "someone thoughtful lives here." Silk roses or eucalyptus. Subtle pinks, not neon red. Something that still looks good throughout February rather than screaming VALENTINE'S DAY in all caps.
 
@@ -43,7 +43,7 @@ Add a heart-motif doormat and you're done. Takes 2 minutes, lasts 4 weeks.
 
 ## The Romantic Tablescape
 
-![Romantic Valentine dinner table setting with candles, roses and linen runner](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhe8HqM6N_ZhdYLIng9OdnKgjTD9e3uUZ4yd61X30OwwpxLq6yRa62pCMDojdOOlvFBMQP9vvXH42Q6r9SHQ3nA4fBRabs9YeFyN8FQTheY19h8CWIvII8dA1oz0WK5R9z44fmGAgs0L08CO8Ot39l1Ybz7ji_qqfVO3Fa-d9ozAoP9kFPWQiO7kR63dURr/s320/table%20scape.png)
+![Romantic Valentine dinner table setting with candles, roses and linen runner](../../assets/images/blog/valentine-decoration-ideas-for-home/table_20scape.png)
 
 Planning dinner at home? Good. Better than fighting for a reservation at some overpriced restaurant, honestly.
 
@@ -69,7 +69,7 @@ Focus on linens. Swap your duvet for something in soft blush or deep burgundy—
 
 Add one weighted throw blanket in a complementary shade. That "snuggle factor" matters more than any decoration you could hang on the wall.
 
-![Styled vignette of romantic bedroom with soft lighting and layered textiles](https://res.cloudinary.com/drusd2mid/image/upload/v1767724566/oulv13zjoir0tkhbauun.jpg)
+![Styled vignette of romantic bedroom with soft lighting and layered textiles](../../assets/images/blog/valentine-decoration-ideas-for-home/oulv13zjoir0tkhbauun.jpg)
 
 ## Texture Your Walls (Permanent Romance)
 

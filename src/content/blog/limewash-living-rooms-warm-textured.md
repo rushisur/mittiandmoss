@@ -2,7 +2,7 @@
 title: "Limewash Living Rooms: Warm, Textured & Calm (2025 Guide)"
 description: "Limewash walls bring depth, texture and old-world charm to any living room. Colour picks, application tips, furniture pairings and shoppable essentials inside."
 date: 2025-10-24T21:51:00.000Z
-image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5DiG1pqKoIkhi3kosrvvxPYX_uGrYXuliwHY1eQv9tXm9XkpE2-eZOqd1jAHz0KG0PjrGOeoeiQHrAzfd9OtTXHdWA3CIHvVzOAUQF7pJLzuGZPIpwnKY1NBYyBJHWlvEFHKJJMYcvc8j97Ctmmo6p9Kq9on47zbmKEzoo6qKeu15hnv-uiRvT5sn8rdX/w640-h426/ChatGPT%20Image%20Oct%2025,%202025,%2012_50_38%20AM.png"
+image: "../../assets/images/blog/limewash-living-rooms-warm-textured/hero-ChatGPT_20Image_20Oct_2025__202025__2012_50_38_20AM.png"
 active: true
 tags: ["Limewash Walls","Living Room"]
 ---

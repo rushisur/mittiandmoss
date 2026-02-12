@@ -2,7 +2,7 @@
 title: "How to Style Clay, Terracotta & Natural Materials in Modern Homes"
 description: "How to bring clay, terracotta and natural materials into a modern home without it looking rustic. Practical tips for walls, planters, textiles and accent pieces."
 date: 2025-12-24T16:54:00.000Z
-image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQcn39s9lqiEELHZcTiPlwF1B-yNBfX_2UzPIVYI_rrLa14eTu0WlOBFllsSXsDVd3csASXMQAmNCv6d80huKm39OJzDJ8VvqXR8ekvN7wgb-09PeIWyh3aVSXc5lDweNo49UXtyoAyvTZ4uORA8XV8wA5r4mJO02YLNhrNwDjLmDDXMOhv_YBl_i7IMCf/w640-h427/Terracota.png"
+image: "../../assets/images/blog/how-to-style-clay-terracotta-natural-materials-modern-homes/hero-Terracota.png"
 active: true
 tags: ["Natural Materials","Styling Tips"]
 ---
@@ -15,7 +15,7 @@ I've been styling with clay, terracotta, wood, and stone for a while now, and th
 
 Here's how to do it right.
 
-![Modern living room with terracotta vases, clay wall art and natural wood furniture](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQcn39s9lqiEELHZcTiPlwF1B-yNBfX_2UzPIVYI_rrLa14eTu0WlOBFllsSXsDVd3csASXMQAmNCv6d80huKm39OJzDJ8VvqXR8ekvN7wgb-09PeIWyh3aVSXc5lDweNo49UXtyoAyvTZ4uORA8XV8wA5r4mJO02YLNhrNwDjLmDDXMOhv_YBl_i7IMCf/w640-h427/Terracota.png)
+![Modern living room with terracotta vases, clay wall art and natural wood furniture](../../assets/images/blog/how-to-style-clay-terracotta-natural-materials-modern-homes/Terracota.png)
 
 *As an Amazon Associate, I earn from qualifying purchases.*
 
@@ -33,7 +33,7 @@ Look, [terracotta planters](https://amzn.to/4peaDxM) are a cliché at this point
 
 The styling trick? Group different sizes together. Three planters—small, medium, large—on a shelf or clustered in a corner creates a proper vignette rather than a sad single pot on a windowsill. Mix in one plant that trails (pothos, string of pearls) and the whole arrangement comes alive.
 
-![Collection of terracotta planters with green houseplants on a wooden shelf](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOywiZF3mNxiM38aNiE-qEif5Nz6XIDqBoPcomAYXyA-sbxbowhtii1L1kATIEew38LKqjiA2Hk-6ub3mZmzIyYzzk5plYLWwlszCMvUf-DKrE5ie3Nh1aZ6q_zCeKfdAhmbPVtdQJ_lt4vHmIp2x7YgPS0sYR4Gy-AlC2Qssj3effdzH1ujuZeTf44xkm/w640-h426/planters.png)
+![Collection of terracotta planters with green houseplants on a wooden shelf](../../assets/images/blog/how-to-style-clay-terracotta-natural-materials-modern-homes/planters.png)
 
 ### Sculptural Pieces
 
@@ -48,7 +48,7 @@ Terracotta tiles on a floor or as a kitchen/bathroom wall accent—that's a bigg
 ## Beyond Terracotta: Other Natural Materials Worth Using
 
 ### Linen and Natural Textiles
-![Draped linen fabric in warm neutral tones on a wooden surface](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVUE1tzqtGrbkoIkPqZAHDfVBi6-JCI7HmGkVZzkdLmY1QXbHs7t5mC704XciuiqJdLXst7SBQIYxBSq17FzZEoa0c69nYUR5VqmSsefaSw7zeA5Rk8jDio1dAhV9o-SJYYIvCHBxFFFlDI7_5j_EBSFJXMvgRobTMKaeYRVZsDePCmozk-tOI4JVYOIyj/w266-h400/linen.png)
+![Draped linen fabric in warm neutral tones on a wooden surface](../../assets/images/blog/how-to-style-clay-terracotta-natural-materials-modern-homes/linen.png)
 
 [Linen throw blankets](https://amzn.to/3N0cokF) draped over a sofa arm—not folded, not styled, just *there*—is one of the easiest upgrades you can make. The fabric has this effortless quality that synthetic materials can't replicate. Linen curtains filtering morning light? That's the kind of thing that makes you stand in your own living room and think "this is nice."
 
@@ -66,7 +66,7 @@ Wood is everywhere. But there's a difference between a room with good wood piece
 
 The key is clean lines. A minimalist [natural wood side table](https://amzn.to/4pdgwvk) with visible grain—oak, walnut, ash—adds warmth without a "rustic" vibe. Let the grain be the feature. Skip any "distressed" finishes (that trend peaked in 2018). Simple oil or wax finishes bring out natural colour and develop patina over time.
 
-![Styled vignette of natural materials in a modern living room setting](https://res.cloudinary.com/drusd2mid/image/upload/v1766593700/tt4oxhgbb2gzishn3a5s.jpg)
+![Styled vignette of natural materials in a modern living room setting](../../assets/images/blog/how-to-style-clay-terracotta-natural-materials-modern-homes/tt4oxhgbb2gzishn3a5s.jpg)
 
 ### Stone and Concrete
 

@@ -2,7 +2,7 @@
 title: "Top 10 Floor Decor Finds in New York for Stylish City Living"
 description: "Living in NYC? These 10 floor decor ideas — statement rugs, sculptural planters, modern lamps — turn any compact apartment into a stylish, design-forward space."
 date: 2025-11-19T12:19:00.000Z
-image: "https://res.cloudinary.com/drusd2mid/image/upload/v1763554364/nwxtxzauxpqd9ui34dky.jpg"
+image: "../../assets/images/blog/top-10-floor-decor-new-york/hero-nwxtxzauxpqd9ui34dky.jpg"
 active: true
 tags: ["Living Room","Styling Tips"]
 ---
@@ -69,7 +69,7 @@ Baskets are the unsung heroes of NYC apartment living. Blankets, magazines, char
 
 Place one next to the sofa, one by the bookshelf. Instant organisation that doubles as decor.
 
-![Modern floor vase arrangement in a minimalist apartment corner](https://res.cloudinary.com/drusd2mid/image/upload/v1763554367/uccgsaskawtcdua5hqn7.jpg)
+![Modern floor vase arrangement in a minimalist apartment corner](../../assets/images/blog/top-10-floor-decor-new-york/uccgsaskawtcdua5hqn7.jpg)
 
 ## 9. Floor Cushions for Flexible Entertaining
 
@@ -77,7 +77,7 @@ When four people and a dog show up for dinner and you have two chairs, floor cus
 
 Bonus: they make a bedroom or living room feel immediately more laid-back and bohemian, which is honestly the vibe most NYC apartments should go for anyway.
 
-![Decorative floor pouf and knitted basket in a cosy reading nook](https://res.cloudinary.com/drusd2mid/image/upload/v1763554370/fvhmsiyu3ppunknr3ebf.jpg)
+![Decorative floor pouf and knitted basket in a cosy reading nook](../../assets/images/blog/top-10-floor-decor-new-york/fvhmsiyu3ppunknr3ebf.jpg)
 
 ## 10. A Great Doormat (Seriously)
 
