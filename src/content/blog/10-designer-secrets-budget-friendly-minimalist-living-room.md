@@ -1,19 +1,9 @@
 ---
-<<<<<<< HEAD
-draft: true
-=======
 title: "10 Designer Secrets for a Budget-Friendly Minimalist Living Room"
 description: "10 designer-approved tricks for a minimalist living room on a budget. Quality sofa picks, smart storage, gallery walls, and the lighting hack that changes everything."
 date: 2025-11-01T18:30:00.000Z
 image: "../../assets/images/blog/10-designer-secrets-budget-friendly-minimalist-living-room/hero-minimalist.png"
->>>>>>> f84e1e7 (Growth Optimization: Image Assets, Related Posts, Pinterest, Schema)
 active: true
-title: 10 Designer Secrets for a Budget-Friendly Minimalist Living Room
-date: 2025-11-01T18:30:00.000Z
-description: 10 designer-approved tricks for a minimalist living room on a
-  budget. Quality sofa picks, smart storage, gallery walls, and the lighting
-  hack that changes everything.
-image: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixnTIeNocG5IEAfpeeB3YZOM7-fGM4Z3BpMAE7pqZCkqDSUccFggCIqC0GcMEod9uet_xSMkdz4kWmS5H66KpYh7TmWjvM0bhzXLfQuX519GPzvtAYdW8G9wJvL3X2rm-ZUTDj6qUm5YXD6xfNEZt15uIuV00XMguZnTqXq2XowdEODaYWV9P8bag7hiKS/w640-h426/minimalist.png
 tags:
   - Budget Decor
   - Living Room
