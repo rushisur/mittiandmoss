@@ -90,9 +90,9 @@ This is where Cloud Dancer really shines—especially if you already have a [min
 - Warm-white walls (paint or limewash—see our [limewash guide](/blog/limewash-living-rooms-warm-textured) for technique)
 - A neutral sofa in cream, oatmeal, or soft greige
 - A [natural jute rug](https://www.amazon.com/dp/B00A7WZZ4M?tag=rushi06-20) to ground the seating area
-- [Linen curtains](https://www.amazon.com/dp/B0CXRM1GKM?tag=rushi06-20) hung high and wide (makes the room feel twice as tall)
+- [Linen curtains](https://www.amazon.com/s?k=natural+linen+curtains+light+filtering+cream&tag=rushi06-20) hung high and wide (makes the room feel twice as tall)
 - One oak or walnut coffee table with visible grain
-- A [white ceramic vase](https://www.amazon.com/dp/B0D2QQP7QG?tag=rushi06-20) with a single branch of dried eucalyptus—not a full bouquet
+- A [white ceramic vase](https://www.amazon.com/s?k=white+ceramic+vase+minimalist+home+decor&tag=rushi06-20) with a single branch of dried eucalyptus—not a full bouquet
 
 **What to skip:** matching furniture sets. They kill the "collected over time" look that makes warm-white rooms feel genuine.
 
@@ -101,8 +101,8 @@ This is where Cloud Dancer really shines—especially if you already have a [min
 Cloud Dancer in the bedroom is basically a shortcut to hotel-level calm.
 
 **Layer it like this:**
-- [Linen duvet cover in natural cream](https://www.amazon.com/dp/B0CP7J3GCR?tag=rushi06-20)—the texture looks incredible against white sheets
-- [A chunky knit or faux-fur throw](https://www.amazon.com/dp/B09MK4LBP4?tag=rushi06-20) draped at the foot (not folded perfectly—let it look lived-in)
+- [Linen duvet cover in natural cream](https://www.amazon.com/s?k=100%25+linen+duvet+cover+cream+natural+queen&tag=rushi06-20)—the texture looks incredible against white sheets
+- [A chunky knit or faux-fur throw](https://www.amazon.com/s?k=cream+faux+fur+throw+blanket+cozy+sherpa&tag=rushi06-20) draped at the foot (not folded perfectly—let it look lived-in)
 - Two to three pillows max. European shams in linen, plus one textured accent pillow.
 - Warm wood nightstand with a ceramic lamp and one book
 
@@ -113,8 +113,8 @@ If you're into the Japandi bedroom look, I wrote a detailed guide on [Japandi be
 White kitchens have been debated to death, but Cloud Dancer pulls off what stark white can't: it feels warm even without upper cabinets or colorful backsplash tiles.
 
 **Quick wins:**
-- [Linen napkins in natural or cream](https://www.amazon.com/dp/B0CFYL9FLF?tag=rushi06-20)—better than paper, photograph beautifully, last years
-- Open shelving with [stoneware bowls and mugs in cream](https://www.amazon.com/dp/B0DG55W7KT?tag=rushi06-20) (mix matte and glazed finishes)
+- [Linen napkins in natural or cream](https://www.amazon.com/s?k=linen+cloth+napkins+natural+cream+set&tag=rushi06-20)—better than paper, photograph beautifully, last years
+- Open shelving with [stoneware bowls and mugs in cream](https://www.amazon.com/s?k=cream+stoneware+bowl+mug+set+matte+handmade&tag=rushi06-20) (mix matte and glazed finishes)
 - A wooden cutting board leaned against the backsplash for texture
 - Dried flowers or herbs in a simple glass jar
 
@@ -123,7 +123,7 @@ White kitchens have been debated to death, but Cloud Dancer pulls off what stark
 Cloud Dancer plus natural stone or concrete is a spa in waiting.
 
 - White towels. Always white towels. They photograph better, wash better, and look cleaner longer.
-- A [natural bamboo bath mat](https://www.amazon.com/dp/B0C9GBF63Z?tag=rushi06-20) adds warmth underfoot
+- A [natural bamboo bath mat](https://www.amazon.com/s?k=bamboo+bath+mat+natural+wood+shower&tag=rushi06-20) adds warmth underfoot
 - Matte black or brushed brass hardware for contrast (not chrome—too cold for this palette)
 - One green plant on the vanity. Pothos or a small fern. That's your color.
 
@@ -133,14 +133,14 @@ I pulled together the essentials for a warm-white refresh. Everything here is we
 
 ### Textiles & Soft Goods
 - [nuLOOM Rigo Hand-Woven Jute Rug](https://www.amazon.com/dp/B00A7WZZ4M?tag=rushi06-20) — natural warmth underfoot, 4.6★
-- [Linen Duvet Cover Set in Natural Cream](https://www.amazon.com/dp/B0CP7J3GCR?tag=rushi06-20) — breathable, textured, gets softer with every wash
-- [Faux Fur Throw Blanket](https://www.amazon.com/dp/B09MK4LBP4?tag=rushi06-20) — reversible sherpa, cozy without clutter
-- [Natural Linen Curtain Panels](https://www.amazon.com/dp/B0CXRM1GKM?tag=rushi06-20) — light-filtering, relaxed drape
+- [Linen Duvet Cover Set in Natural Cream](https://www.amazon.com/s?k=100%25+linen+duvet+cover+cream+natural+queen&tag=rushi06-20) — breathable, textured, gets softer with every wash
+- [Faux Fur Throw Blanket](https://www.amazon.com/s?k=cream+faux+fur+throw+blanket+cozy+sherpa&tag=rushi06-20) — reversible sherpa, cozy without clutter
+- [Natural Linen Curtain Panels](https://www.amazon.com/s?k=natural+linen+curtains+light+filtering+cream&tag=rushi06-20) — light-filtering, relaxed drape
 
 ### Decor & Accents
-- [White Ceramic Decorative Vase](https://www.amazon.com/dp/B0D2QQP7QG?tag=rushi06-20) — minimalist, sculptural
-- [Stoneware Bowl and Mug Set](https://www.amazon.com/dp/B0DG55W7KT?tag=rushi06-20) — matte cream, handmade look
-- [Bamboo Bath Mat](https://www.amazon.com/dp/B0C9GBF63Z?tag=rushi06-20) — spa feel, natural material
+- [White Ceramic Decorative Vase](https://www.amazon.com/s?k=white+ceramic+vase+minimalist+home+decor&tag=rushi06-20) — minimalist, sculptural
+- [Stoneware Bowl and Mug Set](https://www.amazon.com/s?k=cream+stoneware+bowl+mug+set+matte+handmade&tag=rushi06-20) — matte cream, handmade look
+- [Bamboo Bath Mat](https://www.amazon.com/s?k=bamboo+bath+mat+natural+wood+shower&tag=rushi06-20) — spa feel, natural material
 
 ### Styling Tip
 Buy the rug first. It anchors everything and dictates the warmth level of your whites. A jute rug pulls the whole room toward a natural, lived-in feel that cheap white rugs can't replicate.
