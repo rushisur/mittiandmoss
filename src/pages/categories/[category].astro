@@ -3,6 +3,23 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostCard from '../../components/PostCard.astro';
 
+const siteUrl = 'https://mittiandmoss.com';
+
+// Category-specific descriptions for better SEO
+const categoryDescriptions = {
+  "Styling Tips": "Expert interior styling tips for your home. Learn how to arrange furniture, layer textures, choose colors, and create beautiful rooms with confidence.",
+  "Living Room": "Living room design ideas and inspiration. From small space solutions to grand layouts — create a living room that's both stylish and livable.",
+  "Design Trends": "Stay ahead with the latest interior design trends. From warm minimalism to Japandi — discover what's shaping modern home decor.",
+  "Warm Neutrals": "Warm neutral color palette ideas for every room. Explore cream, beige, sand, terracotta, and earth-tone interiors that feel cozy and elegant.",
+  "Bedroom Ideas": "Bedroom design ideas for restful, beautiful spaces. From Japandi bedrooms to cozy neutral retreats — find your perfect bedroom style.",
+  "Budget Decor": "Affordable home decor ideas that look expensive. Budget-friendly styling tips, DIY projects, and designer tricks for every room.",
+  "Japandi": "Japandi interior design — the perfect blend of Japanese minimalism and Scandinavian warmth. Clean lines, natural materials, and serene spaces.",
+  "Natural Materials": "Decorating with natural materials — clay, terracotta, linen, wood, stone, and rattan. Bring organic warmth into modern interiors.",
+  "Limewash Walls": "Limewash wall inspiration and how-to guides. Create beautiful, textured walls with this ancient technique for modern homes.",
+  "Biophilic Design": "Biophilic design ideas — bringing nature indoors. Plants, natural light, organic materials, and living walls for healthier, happier spaces.",
+  "Seasonal Decor": "Seasonal home decor ideas for every holiday and time of year. From Valentine's Day to Christmas — festive styling that feels elegant.",
+};
+
 export async function getStaticPaths() {
   const allPosts = await getCollection('blog');
   
@@ -29,18 +46,92 @@ export async function getStaticPaths() {
 }
 
 const { tag, posts } = Astro.props;
+const slug = tag.toLowerCase().replace(/\s+/g, '-');
+const categoryDescription = categoryDescriptions[tag] || `Browse ${tag} articles on Mitti & Moss. Warm neutral, Japandi & minimalist home decor inspiration.`;
+
+// Breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": `${siteUrl}/`
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Categories",
+      "item": `${siteUrl}/categories/`
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": tag,
+      "item": `${siteUrl}/categories/${slug}/`
+    }
+  ]
+};
+
+// CollectionPage schema for better category page SEO
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": `${tag} — Mitti & Moss`,
+  "description": categoryDescription,
+  "url": `${siteUrl}/categories/${slug}/`,
+  "inLanguage": "en-US",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Mitti & Moss",
+    "url": siteUrl
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": posts.length,
+    "itemListElement": posts.slice(0, 10).map((post, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `${siteUrl}/blog/${post.slug}/`
+    }))
+  }
+};
 ---
 
 <BaseLayout 
-  title={`${tag} — Mitti & Moss`} 
-  description={`Browse ${tag} articles on Mitti & Moss. Warm neutral, Japandi & minimalist home decor inspiration.`}
+  title={`${tag} — Home Decor Ideas | Mitti & Moss`} 
+  description={categoryDescription}
 >
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+
+  <!-- Visible Breadcrumb Navigation -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item">
+          <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb__separator" aria-hidden="true">›</li>
+        <li class="breadcrumb__item">
+          <a href="/categories">Categories</a>
+        </li>
+        <li class="breadcrumb__separator" aria-hidden="true">›</li>
+        <li class="breadcrumb__item breadcrumb__item--current">
+          {tag}
+        </li>
+      </ol>
+    </div>
+  </nav>
 
   <section class="cat-hero">
     <div class="container">
-      <a href="/categories" class="cat-hero__back">← All Categories</a>
       <h1>{tag}</h1>
-      <p>{posts.length} {posts.length === 1 ? 'article' : 'articles'}</p>
+      <p class="cat-hero__desc">{categoryDescription}</p>
+      <span class="cat-hero__count">{posts.length} {posts.length === 1 ? 'article' : 'articles'}</span>
     </div>
   </section>
 
@@ -71,36 +162,72 @@ const { tag, posts } = Astro.props;
 </BaseLayout>
 
 <style>
+  /* Breadcrumb */
+  .breadcrumb {
+    background: var(--color-warm-white);
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--color-sand);
+  }
+
+  .breadcrumb__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--color-warm-gray);
+  }
+
+  .breadcrumb__item a {
+    color: var(--color-warm-gray);
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumb__item a:hover {
+    color: var(--color-earth);
+  }
+
+  .breadcrumb__separator {
+    color: var(--color-sand);
+    font-size: 0.9rem;
+  }
+
+  .breadcrumb__item--current {
+    color: var(--color-charcoal);
+    font-weight: 500;
+  }
+
+  /* Category Hero */
   .cat-hero {
     padding: var(--space-3xl) 0 var(--space-xl);
     text-align: center;
     background: var(--color-warm-white);
-    border-bottom: 1px solid var(--color-sand);
-  }
-
-  .cat-hero__back {
-    display: inline-block;
-    font-size: 0.85rem;
-    color: var(--color-warm-gray);
-    margin-bottom: var(--space-md);
-    letter-spacing: 0.05em;
-    transition: color var(--transition-fast);
-  }
-
-  .cat-hero__back:hover {
-    color: var(--color-earth);
   }
 
   .cat-hero h1 {
     font-size: clamp(2.5rem, 6vw, 3.8rem);
     font-weight: 400;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
   }
 
-  .cat-hero p {
+  .cat-hero__desc {
     color: var(--color-warm-gray);
-    font-size: 1rem;
-    letter-spacing: 0.05em;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-sm);
+    line-height: 1.6;
+  }
+
+  .cat-hero__count {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--color-earth);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 
   .posts-grid {

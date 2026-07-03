@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 
+const siteUrl = 'https://mittiandmoss.com';
+
 const allPosts = await getCollection('blog');
 const posts = allPosts
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -15,9 +17,50 @@ const posts = allPosts
     url: `/blog/${post.slug}`,
     featured: post.data.featured,
   }));
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteUrl}/` },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${siteUrl}/blog/` }
+  ]
+};
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Blog — Mitti & Moss",
+  "description": "Interior design tips, trends, and styling inspiration for warm neutral, Japandi & minimalist homes. Room-by-room guides, color palettes, and budget-friendly decor ideas.",
+  "url": `${siteUrl}/blog/`,
+  "inLanguage": "en-US",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": posts.length,
+    "itemListElement": posts.slice(0, 20).map((post, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `${siteUrl}${post.url}/`
+    }))
+  }
+};
 ---
 
-<BaseLayout title="Blog — Mitti & Moss" description="Interior design tips, trends, and inspiration for warm neutral, Japandi & minimalist homes.">
+<BaseLayout title="Home Decor Blog — Interior Design Tips & Trends | Mitti & Moss" description="Interior design tips, trends, and styling inspiration for warm neutral, Japandi & minimalist homes. Room-by-room guides, color palettes, and budget-friendly decor ideas.">
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+
+  <!-- Visible Breadcrumb Navigation -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="/">Home</a></li>
+        <li class="breadcrumb__separator" aria-hidden="true">›</li>
+        <li class="breadcrumb__item breadcrumb__item--current">Blog</li>
+      </ol>
+    </div>
+  </nav>
 
   <section class="blog-hero">
     <div class="container">

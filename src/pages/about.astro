@@ -1,8 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const siteUrl = 'https://mittiandmoss.com';
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Mitti & Moss",
+  "url": siteUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${siteUrl}/favicon.svg`,
+    "width": 60,
+    "height": 60
+  },
+  "description": "Designing spaces that feel like home — rooted in nature, crafted with care. Warm neutral, Japandi & minimalist home decor inspiration.",
+  "sameAs": [
+    "https://instagram.com/mittiandmoss",
+    "https://pinterest.com/mittiandmoss"
+  ]
+};
 ---
 
 <BaseLayout title="About — Mitti & Moss" description="Learn about Mitti & Moss — warm neutral, Japandi & minimalist home decor inspiration.">
+
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
 
   <section class="about-hero">
     <div class="container">

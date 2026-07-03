@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://mittiandmoss.com/sitemap-index.xml
+
+# Block admin/system paths
+Disallow: /admin/

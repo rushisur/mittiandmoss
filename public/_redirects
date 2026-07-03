@@ -1,15 +1,26 @@
-/2025/10/green-bedroom-furniture-ideas.html /blog/green-bedroom-furniture-ideas 301
-/p/affiliate-disclaimer.html /blog/affiliate-disclaimer 301
-/2025/11/top-10-floor-decor-new-york.html /blog/top-10-floor-decor-new-york 301
-/2025/12/how-to-style-clay-terracotta-natural-materials-modern-homes.html /blog/how-to-style-clay-terracotta-natural-materials-modern-homes 301
-/2025/10/japandi-living-room-ideas.html.html /blog/japandi-living-room-ideas.html 301
-/p/contact-us.html /blog/contact-us 301
-/2025/11/interior-design-trends-2025.html /blog/interior-design-trends-2025 301
-/p/about-us-mitti-moss.html /blog/about-us-mitti-moss 301
-/2025/10/japandi-bedroom-trends-warm-neutrals.html /blog/japandi-bedroom-trends-warm-neutrals 301
-/2025/10/modern-living-room-decor-2025-40-expert-ideas.html /blog/modern-living-room-decor-2025-40-expert-ideas 301
-/2026/01/valentine-decoration-ideas-for-home.html /blog/valentine-decoration-ideas-for-home 301
-/p/privacy-policy.html /blog/privacy-policy 301
-/2025/11/christmas-tree-decoration-ideas.html /blog/christmas-tree-decoration-ideas 301
-/2025/11/10-designer-secrets-budget-friendly-minimalist-living-room.html /blog/10-designer-secrets-budget-friendly-minimalist-living-room 301
-/2025/10/limewash-living-rooms-warm-textured.html /blog/limewash-living-rooms-warm-textured 301
+# Old Blogger / Hugo URL redirects → new Astro URLs
+/2025/10/green-bedroom-furniture-ideas.html /blog/green-bedroom-furniture-ideas/ 301
+/2025/11/top-10-floor-decor-new-york.html /blog/top-10-floor-decor-new-york/ 301
+/2025/12/how-to-style-clay-terracotta-natural-materials-modern-homes.html /blog/how-to-style-clay-terracotta-natural-materials-modern-homes/ 301
+/2025/10/japandi-living-room-ideas.html.html /blog/japandi-living-room-ideas/ 301
+/2025/10/japandi-living-room-ideas.html /blog/japandi-living-room-ideas/ 301
+/2025/11/interior-design-trends-2025.html /blog/interior-design-trends-2025/ 301
+/2025/10/japandi-bedroom-trends-warm-neutrals.html /blog/japandi-bedroom-trends-warm-neutrals/ 301
+/2025/10/modern-living-room-decor-2025-40-expert-ideas.html /blog/modern-living-room-decor-2025-40-expert-ideas/ 301
+/2026/01/valentine-decoration-ideas-for-home.html /blog/valentine-decoration-ideas-for-home/ 301
+/2025/11/christmas-tree-decoration-ideas.html /blog/christmas-tree-decoration-ideas/ 301
+/2025/11/10-designer-secrets-budget-friendly-minimalist-living-room.html /blog/10-designer-secrets-budget-friendly-minimalist-living-room/ 301
+/2025/10/limewash-living-rooms-warm-textured.html /blog/limewash-living-rooms-warm-textured/ 301
+
+# Old page URLs → correct new locations
+/p/affiliate-disclaimer.html /affiliate-disclaimer/ 301
+/p/contact-us.html /contact/ 301
+/p/about-us-mitti-moss.html /about/ 301
+/p/privacy-policy.html /privacy/ 301
+
+# Sitemap redirect (standard path → Astro-generated path)
+/sitemap.xml /sitemap-index.xml 301
+
+# Feed redirects
+/index.xml /sitemap-index.xml 301
+/feed.xml /sitemap-index.xml 301

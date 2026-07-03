@@ -7,7 +7,15 @@ import rehypeExternalLinks from 'rehype-external-links';
 export default defineConfig({
     site: 'https://mittiandmoss.com',
     output: 'static',
-    integrations: [sitemap()],
+    trailingSlash: 'always',
+    integrations: [
+        sitemap({
+            changefreq: 'weekly',
+            priority: 0.7,
+            lastmod: new Date(),
+            filter: (page) => !page.includes('/admin/'),
+        }),
+    ],
     markdown: {
         rehypePlugins: [
             [rehypeExternalLinks, {

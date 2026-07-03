@@ -5,15 +5,78 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
 }
 
 const {
   title,
   description = 'Mitti & Moss — Warm Neutral, Japandi & Minimalist Home Decor. Discover modern organic interiors, limewash walls, natural materials, and room-by-room styling guides.',
   image = '/og-image.jpg',
+  type = 'website',
+  noindex = false,
 } = Astro.props;
 
+const siteUrl = 'https://mittiandmoss.com';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Make OG image absolute
+const absoluteImage = image.startsWith('http') ? image : `${siteUrl}${image.startsWith('/') ? '' : '/'}${image}`;
+
+// Determine if this is the homepage
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '';
+
+// WebSite schema (only on homepage)
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Mitti & Moss",
+  "url": siteUrl,
+  "description": "Mitti & Moss — Warm Neutral, Japandi & Minimalist Home Decor. Discover modern organic interiors, limewash walls, natural materials, and room-by-room styling guides.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mitti & Moss",
+    "url": siteUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/favicon.svg`,
+      "width": 60,
+      "height": 60
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${siteUrl}/blog?q={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
+};
+
+// WebPage schema (for non-homepage, non-article pages)
+const webpageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": title,
+  "url": canonicalURL.href,
+  "description": description,
+  "inLanguage": "en-US",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Mitti & Moss",
+    "url": siteUrl
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mitti & Moss",
+    "url": siteUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/favicon.svg`,
+      "width": 60,
+      "height": 60
+    }
+  }
+};
 ---
 
 <!DOCTYPE html>
@@ -25,6 +88,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="author" content="Mitti & Moss" />
   <link rel="canonical" href={canonicalURL} />
 
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3E2L41G7QQ" is:inline></script>
   <script is:inline>
@@ -34,9 +99,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     gtag('config', 'G-3E2L41G7QQ');
   </script>
 
-  <!-- Google Search Console Verification -->
-  <meta name="google-site-verification" content="PASTE_YOUR_GSC_CODE_HERE" />
-
   <!-- Pinterest Verification -->
   <meta name="p:domain_verify" content="82bfd2408a763486f59ccd8cabb49197" />
 
@@ -44,37 +106,36 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="msvalidate.01" content="A94E5324F8A474A881D13BA68C5E1A48" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={type} />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={image} />
+  <meta property="og:image" content={absoluteImage} />
+  <meta property="og:site_name" content="Mitti & Moss" />
+  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={image} />
+  <meta name="twitter:image" content={absoluteImage} />
 
   <title>{title}</title>
 
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Mitti & Moss",
-    "url": "https://mittiandmoss.com",
-    "description": description,
-    "publisher": {
-      "@type": "Organization",
-      "name": "Mitti & Moss",
-      "url": "https://mittiandmoss.com"
-    }
-  })} />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!-- JSON-LD Structured Data — WebSite only on homepage, WebPage on others -->
+  {isHomepage ? (
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  ) : type !== 'article' && (
+    <script type="application/ld+json" set:html={JSON.stringify(webpageSchema)} />
+  )}
 </head>
 <body>
   <header class="header">
-    <nav class="nav container">
+    <nav class="nav container" aria-label="Main navigation">
       <a href="/" class="nav__logo">Mitti & Moss</a>
       <button class="nav__toggle" aria-label="Toggle menu" id="nav-toggle">
         <span></span><span></span><span></span>
