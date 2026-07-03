@@ -106,25 +106,22 @@ const ogImage = post.data.image?.src || '/og-image.jpg';
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
-  <article class="post" itemscope itemtype="https://schema.org/Article">
+  <article class="post">
 
     <!-- Visible Breadcrumb Navigation -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="container">
-        <ol class="breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
-            <meta itemprop="position" content="1" />
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item">
+            <a href="/">Home</a>
           </li>
           <li class="breadcrumb__separator" aria-hidden="true">›</li>
-          <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/blog" itemprop="item"><span itemprop="name">Blog</span></a>
-            <meta itemprop="position" content="2" />
+          <li class="breadcrumb__item">
+            <a href="/blog">Blog</a>
           </li>
           <li class="breadcrumb__separator" aria-hidden="true">›</li>
-          <li class="breadcrumb__item breadcrumb__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">{post.data.title}</span>
-            <meta itemprop="position" content="3" />
+          <li class="breadcrumb__item breadcrumb__item--current">
+            {post.data.title}
           </li>
         </ol>
       </div>
